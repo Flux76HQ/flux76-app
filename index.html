@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flux76 Apps — DiscVault &amp; more, on iOS</title>
+<meta name="description" content="The home of Flux76's apps. DiscVault — a native iOS collection manager for your 4K, Blu-ray &amp; DVD library. Now in TestFlight beta.">
+<meta property="og:title" content="Flux76 Apps — DiscVault &amp; more, on iOS">
+<meta property="og:description" content="Native iOS apps you own, built to last. Start with DiscVault — now in TestFlight beta.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flux76.app">
+<meta property="og:image" content="https://flux76.app/og-image.png">
+<link rel="canonical" href="https://flux76.app">
+<meta name="theme-color" content="#0B0A18">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0A18; --ink-2:#12112A; --surface:#171633; --line:#2A284D;
+    --text:#ECEBF6; --muted:#8C8AB0;
+    --aqua:#2FE6D6; --violet:#6C5CE7; --magenta:#FF4D9D;
+    --flux:linear-gradient(90deg,#2FE6D6 0%,#6C5CE7 52%,#FF4D9D 100%);
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img{max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .grad{background:var(--flux);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(11,10,24,.72);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Space Grotesk';font-weight:700;font-size:22px;letter-spacing:-.5px;text-decoration:none}
+  .brand svg{width:30px;height:30px}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--muted);text-decoration:none;transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-links .cta{color:var(--text);font-weight:500}
+  @media(max-width:640px){.nav-links a:not(.cta){display:none}.nav-links{gap:16px}}
+
+  /* language switcher */
+  .lang{position:relative}
+  .lang-btn{display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:7px 11px;cursor:pointer;transition:border-color .2s,color .2s}
+  .lang-btn:hover{color:var(--text);border-color:var(--violet)}
+  .lang-btn svg{flex:none}
+  .lang-btn .chev{width:11px;height:11px;transition:transform .2s;opacity:.7}
+  .flag{width:24px;height:16px;border-radius:3px;overflow:hidden;flex:none;display:block;line-height:0;box-shadow:0 0 0 1px rgba(255,255,255,.14) inset}
+  .flag svg{width:100%;height:100%;display:block}
+  .lang.open .lang-btn .chev{transform:rotate(180deg)}
+  .lang-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:172px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;list-style:none;box-shadow:0 14px 38px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .16s,transform .16s,visibility .16s;z-index:60}
+  .lang.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+  .lang-menu li{display:flex;align-items:center;justify-content:flex-start;gap:11px;font-family:'Inter',sans-serif;font-size:14px;color:#C7C6DD;padding:9px 12px;border-radius:8px;cursor:pointer;transition:background .15s,color .15s}
+  .lang-menu li:hover{background:var(--ink-2);color:var(--text)}
+  .lang-menu li[aria-selected="true"]{color:var(--aqua)}
+
+  /* hero */
+  .hero{position:relative;padding:92px 0 84px;overflow:hidden;text-align:center}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(620px 340px at 74% 6%, rgba(255,77,157,.16), transparent 62%),
+    radial-gradient(560px 340px at 16% 20%, rgba(47,230,214,.14), transparent 62%),
+    radial-gradient(760px 460px at 50% 118%, rgba(108,92,231,.20), transparent 60%);
+    pointer-events:none}
+  .hero-in{position:relative;z-index:1}
+  .hero .bigmark{width:84px;height:84px;margin:0 auto 24px;display:block}
+  h1{font-family:'Space Grotesk';font-weight:700;font-size:clamp(42px,8.5vw,82px);letter-spacing:-2.5px;line-height:1}
+  .lede{font-family:'Space Grotesk';font-weight:500;font-size:clamp(18px,3.6vw,23px);margin:22px auto 0;max-width:40ch;color:var(--text)}
+  .sub{color:var(--muted);margin-top:12px;font-size:15px}
+  .current{position:relative;height:3px;width:min(420px,80%);margin:38px auto 0;border-radius:3px;background:var(--line);overflow:hidden}
+  .current::after{content:"";position:absolute;top:0;left:-40%;height:100%;width:40%;background:var(--flux);animation:flow 3.6s cubic-bezier(.6,0,.4,1) infinite}
+  @keyframes flow{0%{left:-45%}100%{left:105%}}
+  .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+  .btn{font-family:'Space Grotesk';font-weight:600;font-size:15px;text-decoration:none;padding:13px 24px;border-radius:12px;transition:transform .15s,box-shadow .2s;display:inline-block}
+  .btn-primary{color:#0B0A18;background:linear-gradient(90deg,#2FE6D6,#6C5CE7);box-shadow:0 6px 24px rgba(108,92,231,.35)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{color:var(--text);border:1px solid var(--line);background:var(--ink-2)}
+  .btn-ghost:hover{border-color:var(--violet)}
+
+  section{padding:70px 0;border-top:1px solid var(--line)}
+  h2{font-family:'Space Grotesk';font-weight:600;font-size:clamp(26px,5vw,34px);letter-spacing:-.8px;margin:14px 0 18px}
+  p.lead{font-size:18px;color:#C7C6DD;max-width:64ch}
+
+  /* app cards */
+  .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:30px}
+  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+  .proj{background:linear-gradient(180deg,var(--ink-2),var(--ink));border:1px solid var(--line);border-radius:18px;padding:26px;transition:border-color .2s,transform .2s;display:flex;flex-direction:column}
+  .proj:hover{border-color:var(--violet);transform:translateY(-3px)}
+  .proj.soon{opacity:.9}
+  .proj.soon:hover{transform:none;border-color:var(--line)}
+  .proj-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .app-ico{width:54px;height:54px;border-radius:15px;flex:none}
+  .proj .tag{font-family:'JetBrains Mono';font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--aqua)}
+  .proj.soon .tag{color:var(--muted)}
+  .proj h3{font-family:'Space Grotesk';font-weight:600;font-size:22px;margin:3px 0 0}
+  .proj p{color:var(--muted);font-size:15px}
+  .badge{margin-left:auto;align-self:flex-start;font-family:'JetBrains Mono';font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--aqua);white-space:nowrap}
+  .badge-soon{color:var(--muted)}
+  .stack{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
+  .pill{font-family:'JetBrains Mono';font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .more{display:inline-flex;align-items:center;gap:6px;margin-top:18px;color:var(--aqua);font-family:'Space Grotesk';font-weight:600;font-size:14px;text-decoration:none;transition:gap .2s}
+  .more:hover{gap:11px}
+
+  /* discvault spotlight */
+  .phones{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+  .phone{width:212px;flex:none}
+  .phone .device{position:relative;border:1px solid var(--line);border-radius:32px;padding:8px;background:linear-gradient(180deg,#1a1937,#0f0e22);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .phone .device::before{content:"";position:absolute;top:15px;left:50%;transform:translateX(-50%);width:58px;height:5px;border-radius:3px;background:rgba(140,138,176,.5);z-index:2}
+  .phone .device img{display:block;width:100%;height:auto;aspect-ratio:320/693;border-radius:24px}
+  .phone .cap{margin-top:16px;text-align:center;color:var(--muted);font-size:13px;line-height:1.5}
+
+  .features{display:grid;grid-template-columns:1fr;gap:14px;margin-top:36px}
+  @media(min-width:640px){.features{grid-template-columns:1fr 1fr}}
+  @media(min-width:960px){.features{grid-template-columns:1fr 1fr 1fr}}
+  .feature{border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:var(--ink-2);transition:border-color .2s,transform .2s}
+  .feature:hover{border-color:var(--violet);transform:translateY(-2px)}
+  .feature .fi{width:30px;height:30px;margin-bottom:12px;display:block}
+  .feature h4{font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:6px}
+  .feature p{color:var(--muted);font-size:14px}
+  .vaultnote{margin-top:30px;font-size:15px}
+  .vaultnote a{color:var(--aqua);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+  .vaultnote a:hover{border-color:var(--aqua)}
+
+  /* beta cta */
+  .beta-cta{position:relative;border:1px solid var(--line);border-radius:22px;padding:48px 30px;text-align:center;background:linear-gradient(180deg,var(--ink-2),var(--ink));overflow:hidden;margin-top:8px}
+  .beta-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 320px at 50% -30%, rgba(108,92,231,.28), transparent 62%);pointer-events:none}
+  .beta-cta .inner{position:relative;z-index:1;max-width:56ch;margin:0 auto}
+  .beta-cta h2{margin-top:12px}
+  .beta-cta p{color:#C7C6DD;font-size:17px;margin-bottom:26px}
+  .beta-cta .btn-primary{font-size:16px;padding:15px 30px}
+  .beta-cta .req{margin-top:16px;color:var(--muted);font-size:13px}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:56px 0 60px}
+  .foot{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start}
+  .foot .brand{margin-bottom:10px}
+  .foot-links{display:flex;gap:44px;flex-wrap:wrap}
+  .col h4{font-family:'JetBrains Mono';font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .col a{display:block;font-size:14px;color:#C7C6DD;text-decoration:none;padding:4px 0;transition:color .2s}
+  .col a:hover{color:var(--aqua)}
+  .copyright{margin-top:40px;font-family:'JetBrains Mono';font-size:12px;color:var(--muted)}
+
+  :focus-visible{outline:2px solid var(--aqua);outline-offset:3px;border-radius:4px}
+  @media(prefers-reduced-motion:reduce){.current::after{animation:none;left:0;width:100%}.btn:hover,.proj:hover,.feature:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2FE6D6"/><stop offset=".5" stop-color="#6C5CE7"/><stop offset="1" stop-color="#FF4D9D"/></linearGradient>
+</defs></svg>
+
+<nav><div class="wrap nav-in">
+  <a class="brand" href="#top">
+    <svg viewBox="0 0 80 80" fill="none"><path d="M40 44 L40 18 M40 44 L20 66 M40 44 L60 66" stroke="url(#fg)" stroke-width="6" stroke-linecap="round"/><circle cx="40" cy="44" r="6" fill="#ECEBF6"/><circle cx="40" cy="16" r="4.6" fill="#2FE6D6"/><circle cx="20" cy="68" r="4.6" fill="#6C5CE7"/><circle cx="60" cy="68" r="4.6" fill="#FF4D9D"/></svg>
+    Flux<span class="grad">76</span>
+  </a>
+  <div class="nav-links">
+    <a href="#apps" data-i18n="nav_apps">Apps</a>
+    <a href="#discvault" data-i18n="nav_discvault">DiscVault</a>
+    <a href="#beta" data-i18n="nav_beta">Beta</a>
+    <a class="cta" href="https://flux76.com">Flux76.com ↗</a>
+    <div class="lang" id="lang">
+      <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+        <span class="flag" id="lang-flag"></span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <ul class="lang-menu" role="listbox" aria-label="Choose language">
+        <li role="option" data-lang="nl">Nederlands</li>
+        <li role="option" data-lang="en">English</li>
+        <li role="option" data-lang="de">Deutsch</li>
+        <li role="option" data-lang="fr">Français</li>
+      </ul>
+    </div>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap hero-in">
+  <svg class="bigmark" viewBox="0 0 80 80" fill="none" aria-label="Flux76">
+    <circle cx="40" cy="40" r="37" stroke="url(#fg)" stroke-width="2.4" opacity=".35"/>
+    <path d="M40 44 L40 18 M40 44 L20 66 M40 44 L60 66" stroke="url(#fg)" stroke-width="5.4" stroke-linecap="round"/>
+    <circle cx="40" cy="44" r="6" fill="url(#fg)"/><circle cx="40" cy="16" r="4.6" fill="#2FE6D6"/><circle cx="20" cy="68" r="4.6" fill="#6C5CE7"/><circle cx="60" cy="68" r="4.6" fill="#FF4D9D"/>
+  </svg>
+  <h1 data-i18n-html="hero_h1">Apps you own,<br>built to <span class="grad">last</span>.</h1>
+  <p class="lede" data-i18n="hero_lede">The home of Flux76's apps. First up: DiscVault — the collection manager for your 4K, Blu-ray &amp; DVD library.</p>
+  <p class="sub mono" data-i18n="hero_sub">native iOS · self-hosted · now in TestFlight beta</p>
+  <div class="current" role="presentation"></div>
+  <div class="btns">
+    <a class="btn btn-primary" href="#beta" data-i18n="hero_btn1">Join the TestFlight beta</a>
+    <a class="btn btn-ghost" href="#discvault" data-i18n="hero_btn2">Explore DiscVault</a>
+  </div>
+</div></header>
+
+<main>
+  <section id="apps"><div class="wrap">
+    <div class="eyebrow" data-i18n="apps_eyebrow">The apps</div>
+    <h2 data-i18n="apps_h2">One app today. More on the way.</h2>
+    <p class="lead" data-i18n="apps_lead">Flux76 builds focused apps you actually own — native where it counts, self-hosted underneath. Right now that's DiscVault, with the rest of the VaultStack suite on the way.</p>
+    <div class="grid">
+      <div class="proj">
+        <div class="proj-head">
+          <img class="app-ico" src="assets/img/discvault-icon.svg" alt="DiscVault" width="54" height="54">
+          <div>
+            <div class="tag" data-i18n="app_dv_tag">Physical media</div>
+            <h3>DiscVault</h3>
+          </div>
+          <span class="badge" data-i18n="app_dv_badge">iOS · Beta</span>
+        </div>
+        <p data-i18n="app_dv_p">Manage your 4K UHD, Blu-ray &amp; DVD collection — scan, organise and never buy a double again.</p>
+        <div class="stack"><span class="pill">SwiftUI</span><span class="pill">PWA</span><span class="pill">Docker</span></div>
+        <a class="more" href="#discvault" data-i18n="app_dv_more">Learn more →</a>
+      </div>
+      <div class="proj soon">
+        <div class="proj-head">
+          <svg class="app-ico" viewBox="0 0 54 54" fill="none" aria-hidden="true"><rect x="1" y="1" width="52" height="52" rx="15" fill="#12112A" stroke="#2A284D" stroke-dasharray="5 5"/><path d="M27 19v16M19 27h16" stroke="url(#fg)" stroke-width="3" stroke-linecap="round"/></svg>
+          <div>
+            <div class="tag" data-i18n="app_soon_tag">More vaults</div>
+            <h3 data-i18n="app_soon_h3">The VaultStack suite</h3>
+          </div>
+          <span class="badge badge-soon" data-i18n="app_soon_badge">Soon</span>
+        </div>
+        <p data-i18n="app_soon_p">MovieVault, WatchVault and more — self-hosted apps that share one library. In the works.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="discvault"><div class="wrap">
+    <div class="eyebrow" data-i18n="dv_eyebrow">DiscVault</div>
+    <h2 data-i18n="dv_h2">Your disc collection, finally organised.</h2>
+    <p class="lead" data-i18n="dv_lead">DiscVault is a native iOS app for collectors of physical media. Scan a barcode for instant cover art and metadata, track every edition and region, and see it beautifully — with an optional self-hosted backend so your data stays yours.</p>
+
+    <!-- SCREENSHOTS: dit zijn tijdelijke, op de echte app gebaseerde mockups.
+         Vervang de .svg-bestanden door de echte iOS-screenshots (zie README) en
+         pas eventueel de bestandsnaam/extensie hieronder aan. -->
+    <div class="phones">
+      <figure class="phone">
+        <div class="device"><img src="assets/img/screenshots/dv-library.svg" alt="DiscVault — bibliotheek" width="320" height="693" loading="lazy"></div>
+        <figcaption class="cap" data-i18n="cap_library">Your whole collection at a glance</figcaption>
+      </figure>
+      <figure class="phone">
+        <div class="device"><img src="assets/img/screenshots/dv-loans.svg" alt="DiscVault — uitleen" width="320" height="693" loading="lazy"></div>
+        <figcaption class="cap" data-i18n="cap_loans">Know exactly what you lent out</figcaption>
+      </figure>
+      <figure class="phone">
+        <div class="device"><img src="assets/img/screenshots/dv-wishlist.svg" alt="DiscVault — wishlist" width="320" height="693" loading="lazy"></div>
+        <figcaption class="cap" data-i18n="cap_wishlist">A wishlist for the editions you want</figcaption>
+      </figure>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="url(#fg)" stroke-width="2" stroke-linecap="round"><path d="M4 5v14M8 5v14M12 5v14M16 5v14M20 5v14"/></svg>
+        <h4 data-i18n="f1_k">Barcode scanning</h4>
+        <p data-i18n="f1_p">Scan a disc and DiscVault pulls in cover art and metadata automatically.</p>
+      </div>
+      <div class="feature">
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="url(#fg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+        <h4 data-i18n="f2_k">Edition tracking</h4>
+        <p data-i18n="f2_p">Steelbook, Director's Cut, Limited or standard — record exactly which release you own.</p>
+      </div>
+      <div class="feature">
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="url(#fg)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" stroke-linecap="round"/></svg>
+        <h4 data-i18n="f3_k">Region logging</h4>
+        <p data-i18n="f3_p">Blu-ray A/B/C and DVD 1–6, kept straight per title.</p>
+      </div>
+      <div class="feature">
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="url(#fg)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <h4 data-i18n="f4_k">Search &amp; filter</h4>
+        <p data-i18n="f4_p">Filter by format, genre or director and find anything in seconds.</p>
+      </div>
+      <div class="feature">
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="url(#fg)" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg>
+        <h4 data-i18n="f5_k">Plex &amp; Jellyfin</h4>
+        <p data-i18n="f5_p">See which discs you already have digitally — and which you still need to rip.</p>
+      </div>
+      <div class="feature">
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="url(#fg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4M12 15l-4-4M12 15l4-4"/><path d="M4 17a4 4 0 004 4h8a4 4 0 004-4"/></svg>
+        <h4 data-i18n="f6_k">Backups &amp; offline</h4>
+        <p data-i18n="f6_p">Full collection backups, one-tap restore, and offline browsing.</p>
+      </div>
+      <div class="feature">
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="url(#fg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M10 7h7v7"/></svg>
+        <h4 data-i18n="f7_k">Lending tracker</h4>
+        <p data-i18n="f7_p">Always know which disc you lent out, and to whom.</p>
+      </div>
+      <div class="feature">
+        <svg class="fi" viewBox="0 0 24 24" fill="none" stroke="url(#fg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
+        <h4 data-i18n="f8_k">Self-hosted &amp; private</h4>
+        <p data-i18n="f8_p">Run the optional Docker backend yourself — your data never leaves your hands.</p>
+      </div>
+    </div>
+
+    <p class="vaultnote"><a href="https://discvault.eu" data-i18n="dv_more_link">More about DiscVault at discvault.eu →</a></p>
+  </div></section>
+
+  <section id="beta"><div class="wrap">
+    <div class="beta-cta"><div class="inner">
+      <div class="eyebrow" data-i18n="beta_eyebrow">TestFlight beta</div>
+      <h2 data-i18n="beta_h2">Become a TestFlight tester</h2>
+      <p data-i18n="beta_p">DiscVault is in active beta. Join via Apple TestFlight, help shape the app, and get every new build first.</p>
+      <!-- TESTFLIGHT: vervang de href hieronder door je publieke TestFlight-uitnodigingslink,
+           bv. https://testflight.apple.com/join/XXXXXXXX  (id="testflight-link") -->
+      <a id="testflight-link" class="btn btn-primary" href="https://testflight.apple.com/join/XXXXXXXX" data-i18n="beta_btn">Join the TestFlight beta</a>
+      <p class="req mono" data-i18n="beta_req">Requires an iPhone and the free TestFlight app.</p>
+    </div></div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="foot">
+    <div>
+      <a class="brand" href="#top">
+        <svg viewBox="0 0 80 80" fill="none" width="30" height="30"><path d="M40 44 L40 18 M40 44 L20 66 M40 44 L60 66" stroke="url(#fg)" stroke-width="6" stroke-linecap="round"/><circle cx="40" cy="44" r="6" fill="#ECEBF6"/></svg>
+        Flux<span class="grad">76</span>
+      </a>
+      <p class="mono" style="color:var(--muted);font-size:13px;max-width:32ch" data-i18n="foot_tagline">Apps you own — built to last.</p>
+    </div>
+    <div class="foot-links">
+      <div class="col">
+        <h4 data-i18n="foot_apps">Apps</h4>
+        <a href="#discvault">DiscVault</a>
+        <a href="https://discvault.eu">discvault.eu ↗</a>
+        <a href="https://flux76.com">Flux76.com ↗</a>
+      </div>
+      <div class="col">
+        <h4 data-i18n="foot_code">Code</h4>
+        <a href="https://github.com/Flux76HQ">GitHub · Flux76HQ</a>
+      </div>
+      <div class="col">
+        <h4 data-i18n="foot_social">Social</h4>
+        <a href="https://bsky.app/profile/flux76hq.bsky.social">Bluesky</a>
+        <a href="https://instagram.com/flux76hq">Instagram</a>
+        <a href="https://www.threads.net/@flux76hq">Threads</a>
+      </div>
+      <div class="col">
+        <h4 data-i18n="foot_contact">Contact</h4>
+        <a href="mailto:info@flux76.com">info@flux76.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">© <span id="yr"></span> Flux76 · <span data-i18n="foot_copyright">self-hosted software · Netherlands</span></div>
+</div></footer>
+
+<script>
+/* ── i18n ───────────────────────────────────────────────────────────────
+   Elke zichtbare tekst is gekoppeld via een data-i18n / data-i18n-html attribuut.
+   Een taal toevoegen:
+     1) kopieer een bestaand blok in I18N en vertaal de waarden
+     2) voeg één <li role="option" data-lang="xx"> toe aan .lang-menu in de nav
+──────────────────────────────────────────────────────────────────────── */
+const I18N = {
+  en: {
+    meta_title:"Flux76 Apps — DiscVault & more, on iOS",
+    meta_desc:"The home of Flux76's apps. DiscVault — a native iOS collection manager for your 4K, Blu-ray & DVD library. Now in TestFlight beta.",
+    og_title:"Flux76 Apps — DiscVault & more, on iOS",
+    og_desc:"Native iOS apps you own, built to last. Start with DiscVault — now in TestFlight beta.",
+    nav_apps:"Apps", nav_discvault:"DiscVault", nav_beta:"Beta",
+    hero_h1:'Apps you own,<br>built to <span class="grad">last</span>.',
+    hero_lede:"The home of Flux76's apps. First up: DiscVault — the collection manager for your 4K, Blu-ray & DVD library.",
+    hero_sub:"native iOS · self-hosted · now in TestFlight beta",
+    hero_btn1:"Join the TestFlight beta", hero_btn2:"Explore DiscVault",
+    apps_eyebrow:"The apps", apps_h2:"One app today. More on the way.",
+    apps_lead:"Flux76 builds focused apps you actually own — native where it counts, self-hosted underneath. Right now that's DiscVault, with the rest of the VaultStack suite on the way.",
+    app_dv_tag:"Physical media", app_dv_badge:"iOS · Beta",
+    app_dv_p:"Manage your 4K UHD, Blu-ray & DVD collection — scan, organise and never buy a double again.",
+    app_dv_more:"Learn more →",
+    app_soon_tag:"More vaults", app_soon_badge:"Soon", app_soon_h3:"The VaultStack suite",
+    app_soon_p:"MovieVault, WatchVault and more — self-hosted apps that share one library. In the works.",
+    dv_eyebrow:"DiscVault", dv_h2:"Your disc collection, finally organised.",
+    dv_lead:"DiscVault is a native iOS app for collectors of physical media. Scan a barcode for instant cover art and metadata, track every edition and region, and see it beautifully — with an optional self-hosted backend so your data stays yours.",
+    cap_library:"Your whole collection at a glance",
+    cap_loans:"Know exactly what you lent out, and to whom",
+    cap_wishlist:"A wishlist for the editions you still want",
+    f1_k:"Barcode scanning", f1_p:"Scan a disc and DiscVault pulls in cover art and metadata automatically.",
+    f2_k:"Edition tracking", f2_p:"Steelbook, Director's Cut, Limited or standard — record exactly which release you own.",
+    f3_k:"Region logging", f3_p:"Blu-ray A/B/C and DVD 1–6, kept straight per title.",
+    f4_k:"Search & filter", f4_p:"Filter by format, genre or director and find anything in seconds.",
+    f5_k:"Plex & Jellyfin", f5_p:"See which discs you already have digitally — and which you still need to rip.",
+    f6_k:"Backups & offline", f6_p:"Full collection backups, one-tap restore, and offline browsing.",
+    f7_k:"Lending tracker", f7_p:"Always know which disc you lent out, and to whom.",
+    f8_k:"Self-hosted & private", f8_p:"Run the optional Docker backend yourself — your data never leaves your hands.",
+    dv_more_link:"More about DiscVault at discvault.eu →",
+    beta_eyebrow:"TestFlight beta", beta_h2:"Become a TestFlight tester",
+    beta_p:"DiscVault is in active beta. Join via Apple TestFlight, help shape the app, and get every new build first.",
+    beta_btn:"Join the TestFlight beta",
+    beta_req:"Requires an iPhone and the free TestFlight app.",
+    foot_tagline:"Apps you own — built to last.",
+    foot_apps:"Apps", foot_code:"Code", foot_social:"Social", foot_contact:"Contact",
+    foot_copyright:"self-hosted software · Netherlands"
+  },
+  nl: {
+    meta_title:"Flux76 Apps — DiscVault & meer, op iOS",
+    meta_desc:"Het thuis van de Flux76-apps. DiscVault — een native iOS-collectiebeheerder voor je 4K-, Blu-ray- & DVD-verzameling. Nu in TestFlight-bèta.",
+    og_title:"Flux76 Apps — DiscVault & meer, op iOS",
+    og_desc:"Native iOS-apps die je zelf bezit, gebouwd om te blijven. Begin met DiscVault — nu in TestFlight-bèta.",
+    nav_apps:"Apps", nav_discvault:"DiscVault", nav_beta:"Bèta",
+    hero_h1:'Apps die je bezit,<br>gebouwd om te <span class="grad">blijven</span>.',
+    hero_lede:"Het thuis van de Flux76-apps. Als eerste: DiscVault — de collectiebeheerder voor je 4K-, Blu-ray- & DVD-verzameling.",
+    hero_sub:"native iOS · zelf-gehost · nu in TestFlight-bèta",
+    hero_btn1:"Word TestFlight-tester", hero_btn2:"Bekijk DiscVault",
+    apps_eyebrow:"De apps", apps_h2:"Nu één app. Meer op komst.",
+    apps_lead:"Flux76 bouwt gerichte apps die je écht zelf bezit — native waar het telt, zelf-gehost eronder. Op dit moment is dat DiscVault, met de rest van de VaultStack-suite in aantocht.",
+    app_dv_tag:"Fysieke media", app_dv_badge:"iOS · Bèta",
+    app_dv_p:"Beheer je 4K UHD-, Blu-ray- & DVD-collectie — scannen, ordenen en nooit meer dubbel kopen.",
+    app_dv_more:"Meer info →",
+    app_soon_tag:"Meer vaults", app_soon_badge:"Binnenkort", app_soon_h3:"De VaultStack-suite",
+    app_soon_p:"MovieVault, WatchVault en meer — zelf-gehoste apps die één bibliotheek delen. In ontwikkeling.",
+    dv_eyebrow:"DiscVault", dv_h2:"Je schijvencollectie, eindelijk op orde.",
+    dv_lead:"DiscVault is een native iOS-app voor verzamelaars van fysieke media. Scan een barcode voor directe cover en metadata, houd elke editie en regio bij, en bekijk alles overzichtelijk — met een optionele zelf-gehoste backend zodat je data van jou blijft.",
+    cap_library:"Je hele collectie in één oogopslag",
+    cap_loans:"Weet precies wat je aan wie hebt uitgeleend",
+    cap_wishlist:"Een wishlist voor de edities die je nog wilt",
+    f1_k:"Barcode scannen", f1_p:"Scan een disc en DiscVault haalt automatisch cover en metadata op.",
+    f2_k:"Editie-tracking", f2_p:"Steelbook, Director's Cut, Limited of standaard — leg vast welke uitgave je hebt.",
+    f3_k:"Regio's bijhouden", f3_p:"Blu-ray A/B/C en DVD 1–6, netjes per titel.",
+    f4_k:"Zoeken & filteren", f4_p:"Filter op formaat, genre of regisseur en vind alles in seconden.",
+    f5_k:"Plex & Jellyfin", f5_p:"Zie welke discs je al digitaal hebt — en welke je nog moet rippen.",
+    f6_k:"Back-ups & offline", f6_p:"Volledige back-ups, herstel met één tik, en offline bladeren.",
+    f7_k:"Uitleen-tracker", f7_p:"Weet altijd welke disc je aan wie hebt uitgeleend.",
+    f8_k:"Zelf-gehost & privé", f8_p:"Draai de optionele Docker-backend zelf — jouw data blijft van jou.",
+    dv_more_link:"Meer over DiscVault op discvault.eu →",
+    beta_eyebrow:"TestFlight-bèta", beta_h2:"Word TestFlight-tester",
+    beta_p:"DiscVault zit in actieve bèta. Doe mee via Apple TestFlight, denk mee over de app en krijg elke nieuwe build als eerste.",
+    beta_btn:"Word TestFlight-tester",
+    beta_req:"Vereist een iPhone en de gratis TestFlight-app.",
+    foot_tagline:"Apps die je bezit — gebouwd om te blijven.",
+    foot_apps:"Apps", foot_code:"Code", foot_social:"Social", foot_contact:"Contact",
+    foot_copyright:"zelf-gehoste software · Nederland"
+  },
+  de: {
+    meta_title:"Flux76 Apps — DiscVault & mehr, für iOS",
+    meta_desc:"Das Zuhause der Flux76-Apps. DiscVault — ein nativer iOS-Sammlungsmanager für deine 4K-, Blu-ray- & DVD-Sammlung. Jetzt in der TestFlight-Beta.",
+    og_title:"Flux76 Apps — DiscVault & mehr, für iOS",
+    og_desc:"Native iOS-Apps, die dir gehören, gebaut, um zu bleiben. Beginne mit DiscVault — jetzt in der TestFlight-Beta.",
+    nav_apps:"Apps", nav_discvault:"DiscVault", nav_beta:"Beta",
+    hero_h1:'Apps, die dir gehören,<br>gebaut, um zu <span class="grad">bleiben</span>.',
+    hero_lede:"Das Zuhause der Flux76-Apps. Den Anfang macht DiscVault — der Sammlungsmanager für deine 4K-, Blu-ray- & DVD-Sammlung.",
+    hero_sub:"natives iOS · selbstgehostet · jetzt in der TestFlight-Beta",
+    hero_btn1:"TestFlight-Tester werden", hero_btn2:"DiscVault entdecken",
+    apps_eyebrow:"Die Apps", apps_h2:"Heute eine App. Weitere folgen.",
+    apps_lead:"Flux76 baut fokussierte Apps, die dir wirklich gehören — nativ, wo es zählt, selbstgehostet darunter. Aktuell ist das DiscVault, der Rest der VaultStack-Suite ist in Arbeit.",
+    app_dv_tag:"Physische Medien", app_dv_badge:"iOS · Beta",
+    app_dv_p:"Verwalte deine 4K-UHD-, Blu-ray- & DVD-Sammlung — scannen, ordnen und nie wieder doppelt kaufen.",
+    app_dv_more:"Mehr erfahren →",
+    app_soon_tag:"Mehr Vaults", app_soon_badge:"Bald", app_soon_h3:"Die VaultStack-Suite",
+    app_soon_p:"MovieVault, WatchVault und mehr — selbstgehostete Apps, die eine Bibliothek teilen. In Arbeit.",
+    dv_eyebrow:"DiscVault", dv_h2:"Deine Disc-Sammlung, endlich geordnet.",
+    dv_lead:"DiscVault ist eine native iOS-App für Sammler physischer Medien. Scanne einen Barcode für sofortiges Cover und Metadaten, verfolge jede Edition und Region und sieh alles übersichtlich — mit optionalem selbstgehostetem Backend, damit deine Daten dir gehören.",
+    cap_library:"Deine ganze Sammlung auf einen Blick",
+    cap_loans:"Wisse genau, was du an wen verliehen hast",
+    cap_wishlist:"Eine Wunschliste für die Editionen, die dir noch fehlen",
+    f1_k:"Barcode-Scan", f1_p:"Scanne eine Disc und DiscVault holt Cover und Metadaten automatisch.",
+    f2_k:"Editions-Tracking", f2_p:"Steelbook, Director's Cut, Limited oder Standard — halte fest, welche Ausgabe du besitzt.",
+    f3_k:"Regionen erfassen", f3_p:"Blu-ray A/B/C und DVD 1–6, sauber pro Titel.",
+    f4_k:"Suchen & Filtern", f4_p:"Filtere nach Format, Genre oder Regisseur und finde alles in Sekunden.",
+    f5_k:"Plex & Jellyfin", f5_p:"Sieh, welche Discs du schon digital hast — und welche du noch rippen musst.",
+    f6_k:"Backups & Offline", f6_p:"Vollständige Backups, Wiederherstellung mit einem Tipp und Offline-Browsing.",
+    f7_k:"Verleih-Tracker", f7_p:"Wisse immer, welche Disc du an wen verliehen hast.",
+    f8_k:"Selbstgehostet & privat", f8_p:"Betreibe das optionale Docker-Backend selbst — deine Daten bleiben bei dir.",
+    dv_more_link:"Mehr über DiscVault auf discvault.eu →",
+    beta_eyebrow:"TestFlight-Beta", beta_h2:"TestFlight-Tester werden",
+    beta_p:"DiscVault ist in aktiver Beta. Mach mit über Apple TestFlight, gestalte die App mit und erhalte jeden neuen Build zuerst.",
+    beta_btn:"TestFlight-Tester werden",
+    beta_req:"Erfordert ein iPhone und die kostenlose TestFlight-App.",
+    foot_tagline:"Apps, die dir gehören — gebaut, um zu bleiben.",
+    foot_apps:"Apps", foot_code:"Code", foot_social:"Social", foot_contact:"Kontakt",
+    foot_copyright:"selbstgehostete Software · Niederlande"
+  },
+  fr: {
+    meta_title:"Flux76 Apps — DiscVault et plus, sur iOS",
+    meta_desc:"La maison des applis Flux76. DiscVault — un gestionnaire de collection iOS natif pour vos 4K, Blu-ray & DVD. Maintenant en bêta TestFlight.",
+    og_title:"Flux76 Apps — DiscVault et plus, sur iOS",
+    og_desc:"Des applis iOS natives qui vous appartiennent, conçues pour durer. Commencez avec DiscVault — maintenant en bêta TestFlight.",
+    nav_apps:"Applis", nav_discvault:"DiscVault", nav_beta:"Bêta",
+    hero_h1:'Des applis qui vous appartiennent,<br>conçues pour <span class="grad">durer</span>.',
+    hero_lede:"La maison des applis Flux76. Pour commencer : DiscVault — le gestionnaire de collection pour vos 4K, Blu-ray et DVD.",
+    hero_sub:"iOS natif · auto-hébergé · maintenant en bêta TestFlight",
+    hero_btn1:"Devenir testeur TestFlight", hero_btn2:"Découvrir DiscVault",
+    apps_eyebrow:"Les applis", apps_h2:"Une appli aujourd'hui. D'autres à venir.",
+    apps_lead:"Flux76 conçoit des applis ciblées qui vous appartiennent vraiment — natives là où ça compte, auto-hébergées en dessous. Pour l'instant c'est DiscVault, le reste de la suite VaultStack arrive.",
+    app_dv_tag:"Médias physiques", app_dv_badge:"iOS · Bêta",
+    app_dv_p:"Gérez votre collection 4K UHD, Blu-ray & DVD — scannez, organisez et n'achetez plus jamais en double.",
+    app_dv_more:"En savoir plus →",
+    app_soon_tag:"Plus de vaults", app_soon_badge:"Bientôt", app_soon_h3:"La suite VaultStack",
+    app_soon_p:"MovieVault, WatchVault et plus — des applis auto-hébergées qui partagent une bibliothèque. En préparation.",
+    dv_eyebrow:"DiscVault", dv_h2:"Votre collection de disques, enfin organisée.",
+    dv_lead:"DiscVault est une appli iOS native pour les collectionneurs de médias physiques. Scannez un code-barres pour une jaquette et des métadonnées instantanées, suivez chaque édition et région, et visualisez le tout avec élégance — avec un backend auto-hébergé optionnel pour que vos données restent les vôtres.",
+    cap_library:"Toute votre collection d'un coup d'œil",
+    cap_loans:"Sachez exactement ce que vous avez prêté, et à qui",
+    cap_wishlist:"Une liste de souhaits pour les éditions qu'il vous manque",
+    f1_k:"Scan de code-barres", f1_p:"Scannez un disque et DiscVault récupère jaquette et métadonnées automatiquement.",
+    f2_k:"Suivi des éditions", f2_p:"Steelbook, Director's Cut, Limited ou standard — notez précisément l'édition que vous possédez.",
+    f3_k:"Suivi des régions", f3_p:"Blu-ray A/B/C et DVD 1–6, bien rangés par titre.",
+    f4_k:"Recherche & filtres", f4_p:"Filtrez par format, genre ou réalisateur et trouvez tout en quelques secondes.",
+    f5_k:"Plex & Jellyfin", f5_p:"Voyez quels disques vous avez déjà en numérique — et lesquels il reste à ripper.",
+    f6_k:"Sauvegardes & hors ligne", f6_p:"Sauvegardes complètes, restauration en un geste et navigation hors ligne.",
+    f7_k:"Suivi des prêts", f7_p:"Sachez toujours quel disque vous avez prêté, et à qui.",
+    f8_k:"Auto-hébergé & privé", f8_p:"Faites tourner le backend Docker optionnel vous-même — vos données ne quittent jamais vos mains.",
+    dv_more_link:"Plus sur DiscVault sur discvault.eu →",
+    beta_eyebrow:"Bêta TestFlight", beta_h2:"Devenez testeur TestFlight",
+    beta_p:"DiscVault est en bêta active. Rejoignez via Apple TestFlight, façonnez l'appli et recevez chaque nouvelle version en premier.",
+    beta_btn:"Devenir testeur TestFlight",
+    beta_req:"Nécessite un iPhone et l'appli gratuite TestFlight.",
+    foot_tagline:"Des applis qui vous appartiennent — conçues pour durer.",
+    foot_apps:"Applis", foot_code:"Code", foot_social:"Réseaux", foot_contact:"Contact",
+    foot_copyright:"logiciels auto-hébergés · Pays-Bas"
+  }
+};
+
+/* SVG flags (rounded via .flag wrapper; en = United Kingdom) */
+const FLAGS = {
+  nl:`<svg viewBox="0 0 24 16" preserveAspectRatio="none"><rect width="24" height="16" fill="#fff"/><rect width="24" height="5.34" fill="#AE1C28"/><rect y="10.66" width="24" height="5.34" fill="#21468B"/></svg>`,
+  en:`<svg viewBox="0 0 60 40" preserveAspectRatio="none"><rect width="60" height="40" fill="#012169"/><path d="M0,0 60,40M60,0 0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 60,40M60,0 0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0V40M0,20H60" stroke="#fff" stroke-width="12"/><path d="M30,0V40M0,20H60" stroke="#C8102E" stroke-width="7"/></svg>`,
+  de:`<svg viewBox="0 0 24 16" preserveAspectRatio="none"><rect width="24" height="16" fill="#000"/><rect y="5.34" width="24" height="5.34" fill="#DD0000"/><rect y="10.66" width="24" height="5.34" fill="#FFCE00"/></svg>`,
+  fr:`<svg viewBox="0 0 24 16" preserveAspectRatio="none"><rect width="24" height="16" fill="#fff"/><rect width="8" height="16" fill="#0055A4"/><rect x="16" width="8" height="16" fill="#EF4135"/></svg>`
+};
+const STORE_KEY = "flux76_lang";
+
+function pickLang(){
+  const q = new URLSearchParams(location.search).get("lang");
+  const stored = (function(){ try { return localStorage.getItem(STORE_KEY); } catch(e){ return null; } })();
+  const nav = (navigator.language || "en").slice(0,2).toLowerCase();
+  const ok = k => (k && I18N[k]) ? k : null;
+  return ok(q) || ok(stored) || ok(nav) || "en";
+}
+
+function setMeta(sel, val){ const el = document.querySelector(sel); if(el && val != null) el.setAttribute("content", val); }
+
+function applyLang(lang){
+  const t = I18N[lang]; if(!t) return;
+  document.documentElement.lang = lang;
+  document.title = t.meta_title;
+  setMeta('meta[name="description"]', t.meta_desc);
+  setMeta('meta[property="og:title"]', t.og_title);
+  setMeta('meta[property="og:description"]', t.og_desc);
+
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const v = t[el.dataset.i18n]; if(v != null) el.textContent = v;
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{
+    const v = t[el.dataset.i18nHtml]; if(v != null) el.innerHTML = v;
+  });
+
+  const curFlag = document.getElementById("lang-flag");
+  if(curFlag) curFlag.innerHTML = FLAGS[lang] || "";
+  document.querySelectorAll(".lang-menu li").forEach(li=>{
+    li.setAttribute("aria-selected", String(li.dataset.lang === lang));
+  });
+
+  try { localStorage.setItem(STORE_KEY, lang); } catch(e){}
+}
+
+(function initLangSwitcher(){
+  const lang = document.getElementById("lang");
+  const btn = lang.querySelector(".lang-btn");
+  lang.querySelectorAll(".lang-menu li").forEach(li=>{
+    const f = document.createElement("span");
+    f.className = "flag"; f.innerHTML = FLAGS[li.dataset.lang] || "";
+    li.prepend(f);
+  });
+  const close = () => { lang.classList.remove("open"); btn.setAttribute("aria-expanded","false"); };
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
+    const open = lang.classList.toggle("open");
+    btn.setAttribute("aria-expanded", String(open));
+  });
+  lang.querySelectorAll(".lang-menu li").forEach(li=>{
+    li.addEventListener("click", () => { applyLang(li.dataset.lang); close(); });
+  });
+  document.addEventListener("click", close);
+  document.addEventListener("keydown", e => { if(e.key === "Escape") close(); });
+})();
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+applyLang(pickLang());
+</script>
+</body>
+</html>
