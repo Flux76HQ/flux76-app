@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="360" viewBox="0 0 1360 360">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2FE6D6"/><stop offset="0.5" stop-color="#6C5CE7"/><stop offset="1" stop-color="#FF4D9D"/></linearGradient>
+<linearGradient id="gh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2FE6D6"/><stop offset="0.5" stop-color="#6C5CE7"/><stop offset="1" stop-color="#FF4D9D"/></linearGradient></defs>
+<g transform="translate(180,180) scale(3.9)">
+<circle cx="0" cy="0" r="37" fill="none" stroke="url(#g)" stroke-width="2.5" opacity="0.5"/>
+<path d="M0 6 L0 -22 M0 6 L-20 26 M0 6 L20 26" fill="none" stroke="url(#g)" stroke-width="5.5" stroke-linecap="round"/>
+<circle cx="0" cy="6" r="6" fill="url(#g)"/>
+<circle cx="0" cy="-24" r="4.6" fill="#2FE6D6"/><circle cx="-22" cy="28" r="4.6" fill="#6C5CE7"/><circle cx="22" cy="28" r="4.6" fill="#FF4D9D"/>
+</g>
+<text x="360" y="252" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="210" letter-spacing="-6" fill="#0B0A18">Flux</text>
+<text x="764" y="252" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="210" letter-spacing="-6" fill="url(#gh)">76</text>
+</svg>

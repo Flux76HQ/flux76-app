@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Flux76 Apps</title>
-  <meta name="description" content="Discover the apps by Flux76. Thoughtful, privacy-friendly software for iPhone and iPad.">
-  <meta property="og:title" content="Flux76 Apps">
-  <meta property="og:description" content="Thoughtful, privacy-friendly apps made by Flux76.">
+  <title>DiscVault for iPhone and iPad | Flux76</title>
+  <meta name="description" content="Scan and organise your 4K UHD, Blu-ray and DVD collection with DiscVault for iPhone and iPad.">
+  <meta property="og:title" content="DiscVault for iPhone and iPad">
+  <meta property="og:description" content="Your physical media collection, organised and always close.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://flux76.app/">
+  <meta property="og:url" content="https://flux76.app/discvault/">
   <meta property="og:image" content="https://flux76.app/og-image.png">
-  <link rel="canonical" href="https://flux76.app/">
+  <link rel="canonical" href="https://flux76.app/discvault/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/site.css">
   <script>
@@ -22,7 +22,7 @@
     })();
   </script>
 </head>
-<body data-page="home">
+<body data-page="discvault">
   <header class="site-header">
     <nav class="shell nav" aria-label="Primary">
       <a class="brand" href="/" aria-label="Flux76 Apps">
@@ -31,7 +31,7 @@
         <img class="logo-mark" src="/assets/img/flux76-mark.svg" alt="Flux76" width="360" height="360">
       </a>
       <div class="nav-actions">
-        <a class="nav-link" href="https://flux76.com">Flux76.com</a>
+        <a class="back-link" href="/">Apps</a>
         <select class="control language-select" aria-label="Language">
           <option value="en">English</option>
           <option value="cs">Čeština</option>
@@ -64,33 +64,51 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="shell hero-copy">
-        <p class="eyebrow">Flux76 apps</p>
-        <h1 data-i18n="hero_title">Apps made with care.</h1>
-        <p class="hero-lede" data-i18n="hero_lede">A quiet home for the apps by Flux76. Clear, privacy-friendly and built to last.</p>
-      </div>
-    </section>
-
-    <section class="apps-section" aria-labelledby="apps-title">
-      <div class="shell">
-        <div class="section-heading">
-          <h2 id="apps-title">Apps</h2>
-        </div>
-
-        <a class="app-card" href="/discvault/">
+    <section class="shell product-hero">
+      <div class="product-copy">
+        <div class="product-lockup">
           <img class="app-icon" src="/assets/img/discvault-icon.png" alt="DiscVault" width="512" height="512">
           <div>
-            <p class="app-meta" data-i18n="app_platform">iPhone and iPad</p>
-            <h3>DiscVault</h3>
-            <p class="app-summary" data-i18n="app_description">Bring your 4K UHD, Blu-ray and DVD collection together in one clear library.</p>
+            <p class="product-name">DiscVault</p>
+            <p class="product-platform" data-i18n="platform">For iPhone and iPad</p>
           </div>
-          <span class="card-action">DiscVault</span>
-        </a>
+        </div>
+        <p class="eyebrow" data-i18n="eyebrow">Your physical media collection</p>
+        <h1 data-i18n="hero_title">Your collection. Always close.</h1>
+        <p class="hero-lede" data-i18n="hero_lede">Scan a barcode and DiscVault fills in the rest. From 4K UHD and Blu-ray to DVD: organised, searchable and private on your own device.</p>
 
-        <p class="coming-note" data-i18n="coming_note">More apps will follow.</p>
+        <a class="store-link" href="https://apps.apple.com/app/discvault/id6788772918" data-i18n-aria="store_aria" aria-label="Download DiscVault on the App Store">
+          <img class="store-badge" src="/assets/img/app-store-badge-en.svg" alt="" width="120" height="40">
+        </a>
+      </div>
+
+      <div class="product-visual">
+        <figure>
+          <img class="product-screenshot" src="/assets/img/discvault-library.png" alt="DiscVault library on an iPhone with 4K UHD, Blu-ray and DVD titles" data-i18n-alt="screenshot_alt" width="768" height="1567">
+        </figure>
       </div>
     </section>
+
+    <section class="benefits" aria-label="DiscVault benefits">
+      <div class="shell benefit-grid">
+        <article class="benefit">
+          <span class="benefit-number">01</span>
+          <h3 data-i18n="benefit_1_title">Scan in seconds</h3>
+          <p data-i18n="benefit_1_text">Point your camera at a barcode and add the title, cover and metadata right away.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit-number">02</span>
+          <h3 data-i18n="benefit_2_title">Never buy a duplicate</h3>
+          <p data-i18n="benefit_2_text">Search and filter your entire collection, even while standing in front of a full store shelf.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit-number">03</span>
+          <h3 data-i18n="benefit_3_title">Privacy first</h3>
+          <p data-i18n="benefit_3_text">No account, ads or tracking. Your collection stays on your device.</p>
+        </article>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
