@@ -30,8 +30,11 @@ assets/img/discvault-library.png # aangeleverd transparant DiscVault-productbeel
 assets/img/flux76-lockup-*.svg  # officiële Flux76-lockups
 assets/img/flux76-mark.svg      # compacte Flux76-markering voor mobiel
 assets/img/app-store-badge-*.svg # officiële Apple-badges voor alle 20 talen
+assets/img/discvault-og.png      # DiscVault social preview (1200×630)
 assets/img/telefoon/web/        # geoptimaliseerde screenshots voor het web
 .github/workflows/pages.yml     # auto-deploy naar GitHub Pages
+llms.txt                        # compacte Engelse productfeiten voor AI-systemen
+sitemap.xml                     # canonieke URLs met lastmod
 ```
 
 ## Screenshots

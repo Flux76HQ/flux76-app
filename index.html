@@ -4,15 +4,84 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Flux76 Apps</title>
-  <meta name="description" content="Discover the apps by Flux76. Thoughtful, privacy-friendly software for iPhone and iPad.">
+  <meta name="description" content="Discover the official apps by Flux76: thoughtful, privacy-friendly software for iPhone and iPad, built to last.">
+  <meta name="author" content="Flux76">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta property="og:title" content="Flux76 Apps">
-  <meta property="og:description" content="Thoughtful, privacy-friendly apps made by Flux76.">
+  <meta property="og:description" content="Thoughtful, privacy-friendly apps made by Flux76 and built to last.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://flux76.app/">
+  <meta property="og:site_name" content="Flux76 Apps">
   <meta property="og:image" content="https://flux76.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Flux76 Apps">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Flux76 Apps">
+  <meta name="twitter:description" content="Thoughtful, privacy-friendly apps made by Flux76 and built to last.">
+  <meta name="twitter:image" content="https://flux76.app/og-image.png">
+  <meta name="twitter:image:alt" content="Flux76 Apps">
   <link rel="canonical" href="https://flux76.app/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/site.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://flux76.com/#organization",
+          "name": "Flux76",
+          "url": "https://flux76.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://flux76.app/assets/img/flux76-mark.svg"
+          },
+          "sameAs": [
+            "https://github.com/Flux76HQ",
+            "https://bsky.app/profile/flux76hq.bsky.social"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://flux76.app/#website",
+          "url": "https://flux76.app/",
+          "name": "Flux76 Apps",
+          "description": "The official catalog of apps developed by Flux76.",
+          "publisher": {
+            "@id": "https://flux76.com/#organization"
+          },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://flux76.app/#webpage",
+          "url": "https://flux76.app/",
+          "name": "Flux76 Apps",
+          "description": "Discover thoughtful, privacy-friendly apps made by Flux76.",
+          "isPartOf": {
+            "@id": "https://flux76.app/#website"
+          },
+          "about": {
+            "@id": "https://flux76.com/#organization"
+          },
+          "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": 1,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "DiscVault",
+                "url": "https://flux76.app/discvault/"
+              }
+            ]
+          },
+          "inLanguage": "en"
+        }
+      ]
+    }
+  </script>
   <script>
     (() => {
       const theme = localStorage.getItem("flux76-theme");

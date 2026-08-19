@@ -144,8 +144,6 @@ function pageCopy(language, locale) {
 
   if (pageName === "home") {
     return {
-      meta_title: "Flux76 Apps",
-      meta_description: site.homeLede,
       hero_title: site.homeTitle,
       hero_lede: site.homeLede,
       app_platform: locale.routes.ios.label,
@@ -155,8 +153,6 @@ function pageCopy(language, locale) {
   }
 
   return {
-    meta_title: `${locale.seo.title} | Flux76`,
-    meta_description: locale.seo.description,
     platform: locale.routes.ios.label,
     eyebrow: locale.hero.eyebrow,
     hero_title: locale.hero.accent,
@@ -190,8 +186,6 @@ async function applyLanguage(language) {
   const site = SITE_COPY[activeLanguage];
 
   document.documentElement.lang = activeLanguage;
-  document.title = copy.meta_title;
-  document.querySelector('meta[name="description"]').content = copy.meta_description;
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const value = copy[element.dataset.i18n];
