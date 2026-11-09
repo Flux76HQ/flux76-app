@@ -5,121 +5,121 @@ const LANGUAGES = [
 
 const SITE_COPY = {
   en: {
-    appearance: "Appearance", system: "System", light: "Light", dark: "Dark",
+    language: "Languages", appearance: "Appearance", system: "System", light: "Light", dark: "Dark",
     homeTitle: "Apps made with care.",
     homeLede: "A quiet home for the apps by Flux76. Clear, privacy-friendly and built to last.",
     coming: "More apps will follow."
   },
   cs: {
-    appearance: "Vzhled", system: "Systém", light: "Světlý", dark: "Tmavý",
+    language: "Jazyky", appearance: "Vzhled", system: "Systém", light: "Světlý", dark: "Tmavý",
     homeTitle: "Aplikace tvořené s péčí.",
     homeLede: "Klidné místo pro aplikace Flux76. Přehledné, šetrné k soukromí a vytvořené tak, aby vydržely.",
     coming: "Další aplikace budou následovat."
   },
   da: {
-    appearance: "Udseende", system: "System", light: "Lys", dark: "Mørk",
+    language: "Sprog", appearance: "Udseende", system: "System", light: "Lys", dark: "Mørk",
     homeTitle: "Apps skabt med omtanke.",
     homeLede: "Et roligt hjem til apps fra Flux76. Enkle, privatlivsvenlige og bygget til at holde.",
     coming: "Flere apps følger."
   },
   de: {
-    appearance: "Darstellung", system: "System", light: "Hell", dark: "Dunkel",
+    language: "Sprachen", appearance: "Darstellung", system: "System", light: "Hell", dark: "Dunkel",
     homeTitle: "Apps mit Sorgfalt gemacht.",
     homeLede: "Ein ruhiges Zuhause für die Apps von Flux76. Klar, datenschutzfreundlich und für die Zukunft gebaut.",
     coming: "Weitere Apps folgen."
   },
   el: {
-    appearance: "Εμφάνιση", system: "Σύστημα", light: "Φωτεινό", dark: "Σκούρο",
+    language: "Γλώσσες", appearance: "Εμφάνιση", system: "Σύστημα", light: "Φωτεινό", dark: "Σκούρο",
     homeTitle: "Εφαρμογές φτιαγμένες με φροντίδα.",
     homeLede: "Ένα ήρεμο σπίτι για τις εφαρμογές της Flux76. Απλές, φιλικές προς την ιδιωτικότητα και φτιαγμένες για να αντέχουν.",
     coming: "Θα ακολουθήσουν περισσότερες εφαρμογές."
   },
   es: {
-    appearance: "Apariencia", system: "Sistema", light: "Claro", dark: "Oscuro",
+    language: "Idiomas", appearance: "Apariencia", system: "Sistema", light: "Claro", dark: "Oscuro",
     homeTitle: "Apps hechas con cuidado.",
     homeLede: "Un espacio tranquilo para las apps de Flux76. Claras, respetuosas con la privacidad y hechas para durar.",
     coming: "Pronto llegarán más apps."
   },
   fi: {
-    appearance: "Ulkoasu", system: "Järjestelmä", light: "Vaalea", dark: "Tumma",
+    language: "Kielet", appearance: "Ulkoasu", system: "Järjestelmä", light: "Vaalea", dark: "Tumma",
     homeTitle: "Huolella tehtyjä sovelluksia.",
     homeLede: "Rauhallinen koti Flux76:n sovelluksille. Selkeitä, yksityisyyttä kunnioittavia ja tehty kestämään.",
     coming: "Lisää sovelluksia on tulossa."
   },
   fr: {
-    appearance: "Apparence", system: "Système", light: "Clair", dark: "Sombre",
+    language: "Langues", appearance: "Apparence", system: "Système", light: "Clair", dark: "Sombre",
     homeTitle: "Des apps conçues avec soin.",
     homeLede: "Un espace calme pour les apps de Flux76. Claires, respectueuses de la vie privée et faites pour durer.",
     coming: "D'autres apps suivront."
   },
   hu: {
-    appearance: "Megjelenés", system: "Rendszer", light: "Világos", dark: "Sötét",
+    language: "Nyelvek", appearance: "Megjelenés", system: "Rendszer", light: "Világos", dark: "Sötét",
     homeTitle: "Gondosan készített appok.",
     homeLede: "Nyugodt otthon a Flux76 appjainak. Átláthatók, adatvédelem-központúak és hosszú távra készültek.",
     coming: "További appok érkeznek."
   },
   it: {
-    appearance: "Aspetto", system: "Sistema", light: "Chiaro", dark: "Scuro",
+    language: "Lingue", appearance: "Aspetto", system: "Sistema", light: "Chiaro", dark: "Scuro",
     homeTitle: "App realizzate con cura.",
     homeLede: "Uno spazio tranquillo per le app di Flux76. Chiare, attente alla privacy e fatte per durare.",
     coming: "Altre app arriveranno."
   },
   ja: {
-    appearance: "表示", system: "システム", light: "ライト", dark: "ダーク",
+    language: "言語", appearance: "表示", system: "システム", light: "ライト", dark: "ダーク",
     homeTitle: "こだわって作ったアプリ。",
     homeLede: "Flux76のアプリのための落ち着いた場所。分かりやすく、プライバシーに配慮し、長く使えるように作られています。",
     coming: "今後さらにアプリが加わります。"
   },
   ko: {
-    appearance: "화면 모드", system: "시스템", light: "라이트", dark: "다크",
+    language: "언어", appearance: "화면 모드", system: "시스템", light: "라이트", dark: "다크",
     homeTitle: "정성을 담아 만든 앱.",
     homeLede: "Flux76 앱을 위한 차분한 공간입니다. 명확하고 개인정보를 존중하며 오래 사용할 수 있도록 만들었습니다.",
     coming: "더 많은 앱이 추가될 예정입니다."
   },
   nl: {
-    appearance: "Weergave", system: "Systeem", light: "Licht", dark: "Donker",
+    language: "Talen", appearance: "Weergave", system: "Systeem", light: "Licht", dark: "Donker",
     homeTitle: "Apps met aandacht gemaakt.",
     homeLede: "Een rustig thuis voor de apps van Flux76. Duidelijk, privacyvriendelijk en gebouwd om lang mee te gaan.",
     coming: "Meer apps volgen."
   },
   no: {
-    appearance: "Utseende", system: "System", light: "Lys", dark: "Mørk",
+    language: "Språk", appearance: "Utseende", system: "System", light: "Lys", dark: "Mørk",
     homeTitle: "Apper laget med omtanke.",
     homeLede: "Et rolig hjem for appene fra Flux76. Tydelige, personvernvennlige og bygget for å vare.",
     coming: "Flere apper kommer."
   },
   pl: {
-    appearance: "Wygląd", system: "System", light: "Jasny", dark: "Ciemny",
+    language: "Języki", appearance: "Wygląd", system: "System", light: "Jasny", dark: "Ciemny",
     homeTitle: "Aplikacje tworzone z troską.",
     homeLede: "Spokojne miejsce dla aplikacji Flux76. Przejrzyste, przyjazne prywatności i stworzone na lata.",
     coming: "Pojawią się kolejne aplikacje."
   },
   pt: {
-    appearance: "Aparência", system: "Sistema", light: "Claro", dark: "Escuro",
+    language: "Idiomas", appearance: "Aparência", system: "Sistema", light: "Claro", dark: "Escuro",
     homeTitle: "Apps criadas com cuidado.",
     homeLede: "Um espaço tranquilo para as apps da Flux76. Claras, focadas na privacidade e feitas para durar.",
     coming: "Mais apps chegarão."
   },
   sv: {
-    appearance: "Utseende", system: "System", light: "Ljust", dark: "Mörkt",
+    language: "Språk", appearance: "Utseende", system: "System", light: "Ljust", dark: "Mörkt",
     homeTitle: "Appar skapade med omsorg.",
     homeLede: "Ett lugnt hem för apparna från Flux76. Tydliga, integritetsvänliga och byggda för att hålla.",
     coming: "Fler appar kommer."
   },
   tr: {
-    appearance: "Görünüm", system: "Sistem", light: "Açık", dark: "Koyu",
+    language: "Diller", appearance: "Görünüm", system: "Sistem", light: "Açık", dark: "Koyu",
     homeTitle: "Özenle geliştirilen uygulamalar.",
     homeLede: "Flux76 uygulamaları için sakin bir yuva. Anlaşılır, gizlilik dostu ve uzun ömürlü.",
     coming: "Daha fazla uygulama gelecek."
   },
   uk: {
-    appearance: "Вигляд", system: "Система", light: "Світлий", dark: "Темний",
+    language: "Мови", appearance: "Вигляд", system: "Система", light: "Світлий", dark: "Темний",
     homeTitle: "Застосунки, створені з турботою.",
     homeLede: "Спокійний дім для застосунків Flux76. Зрозумілі, дружні до приватності та створені надовго.",
     coming: "Згодом з'являться інші застосунки."
   },
   zh: {
-    appearance: "外观", system: "跟随系统", light: "浅色", dark: "深色",
+    language: "语言", appearance: "外观", system: "跟随系统", light: "浅色", dark: "深色",
     homeTitle: "用心打造的应用。",
     homeLede: "Flux76 应用的简洁空间。清晰、注重隐私，并为长久使用而打造。",
     coming: "更多应用即将推出。"
@@ -128,6 +128,31 @@ const SITE_COPY = {
 
 const pageName = document.body.dataset.page;
 let languageRequest = 0;
+
+// Which locale files each page needs. "discvault" is the shared DiscVault copy
+// (same files as discvault.eu); "colors" is the Colors of the Day page copy.
+const LOCALE_SOURCES = {
+  discvault: (language) => `/assets/locales/${language}.json`,
+  colors: (language) => `/assets/locales/colors-of-the-day/${language}.json`
+};
+
+const PAGE_LOCALES = {
+  home: ["discvault", "colors"],
+  discvault: ["discvault"],
+  "colors-of-the-day": ["colors"]
+};
+
+async function loadLocales(language) {
+  const sources = PAGE_LOCALES[pageName] || [];
+  const entries = await Promise.all(sources.map(async (source) => {
+    const response = await fetch(LOCALE_SOURCES[source](language));
+    if (!response.ok) {
+      throw new Error(`Unable to load ${source} locale ${language}: HTTP ${response.status}`);
+    }
+    return [source, await response.json()];
+  }));
+  return Object.fromEntries(entries);
+}
 
 function preferredLanguage() {
   const saved = localStorage.getItem("flux76-language");
@@ -139,8 +164,9 @@ function preferredLanguage() {
   return LANGUAGES.includes(browserLanguage) ? browserLanguage : "en";
 }
 
-function pageCopy(language, locale) {
+function pageCopy(language, locales) {
   const site = SITE_COPY[language];
+  const locale = locales.discvault;
 
   if (pageName === "home") {
     return {
@@ -148,8 +174,14 @@ function pageCopy(language, locale) {
       hero_lede: site.homeLede,
       app_platform: locale.routes.ios.label,
       app_description: locale.routes.ios.body,
+      cotd_platform: locales.colors.home_platform,
+      cotd_description: locales.colors.home_description,
       coming_note: site.coming
     };
+  }
+
+  if (pageName === "colors-of-the-day") {
+    return locales.colors;
   }
 
   return {
@@ -171,18 +203,13 @@ function pageCopy(language, locale) {
 async function applyLanguage(language) {
   const activeLanguage = LANGUAGES.includes(language) ? language : "en";
   const request = ++languageRequest;
-  const response = await fetch(`/assets/locales/${activeLanguage}.json`);
+  const locales = await loadLocales(activeLanguage);
 
-  if (!response.ok) {
-    throw new Error(`Unable to load locale ${activeLanguage}: HTTP ${response.status}`);
-  }
-
-  const locale = await response.json();
   if (request !== languageRequest) {
     return;
   }
 
-  const copy = pageCopy(activeLanguage, locale);
+  const copy = pageCopy(activeLanguage, locales);
   const site = SITE_COPY[activeLanguage];
 
   document.documentElement.lang = activeLanguage;
@@ -210,8 +237,8 @@ async function applyLanguage(language) {
 
   document.querySelectorAll(".language-select").forEach((select) => {
     select.value = activeLanguage;
-    select.setAttribute("aria-label", locale.nav.language);
-    select.title = locale.nav.language;
+    select.setAttribute("aria-label", site.language);
+    select.title = site.language;
   });
 
   document.querySelectorAll(".theme-select").forEach((select) => {

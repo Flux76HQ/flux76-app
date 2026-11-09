@@ -303,6 +303,10 @@ h3 {
   transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
+.app-card + .app-card {
+  margin-top: 20px;
+}
+
 .app-card:hover {
   border-color: var(--border);
   box-shadow: var(--shadow-card-hover);
