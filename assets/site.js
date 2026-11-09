@@ -254,6 +254,13 @@ async function applyLanguage(language) {
     storeBadge.src = `/assets/img/app-store-badge-${activeLanguage}.svg`;
   }
 
+  // The privacy policy exists in English and Dutch only.
+  document.querySelectorAll("[data-privacy-link]").forEach((link) => {
+    link.href = activeLanguage === "nl"
+      ? "/colors-of-the-day/privacy/nl/"
+      : "/colors-of-the-day/privacy/";
+  });
+
   localStorage.setItem("flux76-language", activeLanguage);
 }
 
@@ -288,7 +295,12 @@ document.querySelectorAll(".theme-select").forEach((select) => {
 
 const savedTheme = localStorage.getItem("flux76-theme");
 applyTheme(["light", "dark", "system"].includes(savedTheme) ? savedTheme : "system");
-applyLanguage(preferredLanguage()).catch(reportLanguageError);
+
+// Pages without translated copy (the privacy policies, written per language)
+// keep their own language and leave the saved preference alone.
+if (pageName in PAGE_LOCALES) {
+  applyLanguage(preferredLanguage()).catch(reportLanguageError);
+}
 
 document.querySelectorAll("[data-current-year]").forEach((element) => {
   element.textContent = new Date().getFullYear();
