@@ -1,0 +1,692 @@
+/*
+ * Colors of the Day — page styles.
+ *
+ * Built on the Colors of the Day design system (tokens.json). The rule that
+ * shapes everything here: the interface is neutral. Colour only appears as the
+ * game's own colours (targets, choices, split circles) and in the brand mark,
+ * never as buttons, links, eyebrows or states.
+ *
+ * Loaded after site.css on /colors-of-the-day/ only. It maps the shared site
+ * variables onto the app's tokens, so the shared header and footer turn neutral
+ * on this page without changes to site.css.
+ */
+
+/* Manrope (SIL OFL 1.1, see /assets/fonts/manrope/OFL.txt), self-hosted. */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/assets/fonts/manrope/manrope-cyrillic-wght-normal.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/assets/fonts/manrope/manrope-greek-wght-normal.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/assets/fonts/manrope/manrope-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/assets/fonts/manrope/manrope-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ---------- Tokens ---------- */
+
+body[data-page="colors-of-the-day"] {
+  /* Theme tokens, light (tokens.json → color, theme "light") */
+  --cotd-surface: #F3F1EC;
+  --cotd-surface-raised: #FFFFFF;
+  --cotd-ink: #0E0E10;
+  --cotd-ink-muted: #5E5E63;
+  --cotd-hairline: #0E0E1024;
+  --cotd-control: #0E0E10;
+  --cotd-on-control: #FFFFFF;
+  --cotd-control-track: #DAD7D0;
+  --cotd-surface-glass: rgba(243, 241, 236, 0.86);
+
+  /* Fixed tokens, the same in both themes */
+  --cotd-share-ground: #0E0E10;
+  --cotd-share-ink: #FFFFFF;
+  --cotd-share-muted: #8A8A90;
+  --cotd-share-score: #C9C9CE;
+  --cotd-band: #1C1C1E; /* surface-raised (dark): the always-dark share band */
+  --cotd-band-hairline: #FFFFFF24; /* hairline (dark) */
+  --cotd-timer-ring: #FFFFFF;
+  --cotd-hue-red: #FF4D5A;
+  --cotd-hue-orange: #FF9A3D;
+  --cotd-hue-yellow: #FFD23F;
+  --cotd-hue-lime: #7ED957;
+  --cotd-hue-mint: #2ED3A5;
+  --cotd-hue-blue: #2FA8FF;
+  --cotd-hue-indigo: #5B6CFF;
+  --cotd-hue-violet: #A45BFF;
+  --cotd-hue-pink: #FF4FC3;
+
+  --cotd-space-1: 4px;
+  --cotd-space-2: 8px;
+  --cotd-space-3: 14px;
+  --cotd-space-4: 24px;
+  --cotd-space-5: 28px;
+  --cotd-space-6: 40px;
+  --cotd-space-7: 60px;
+  --cotd-radius-sm: 14px;
+  --cotd-radius-md: 24px;
+  --cotd-radius-lg: 28px;
+  --cotd-radius-xl: 32px;
+  --cotd-shadow-handle: 0 4px 14px #00000066;
+  --cotd-shadow-icon: 0 12px 30px #0000003D;
+
+  /* Shared site variables mapped onto the app's neutral tokens */
+  --bg: var(--cotd-surface);
+  --surface: var(--cotd-surface-raised);
+  --surface-2: var(--cotd-control-track);
+  --surface-glass: var(--cotd-surface-glass);
+  --border-subtle: var(--cotd-hairline);
+  --border: var(--cotd-ink-muted);
+  --text: var(--cotd-ink);
+  --text-2: var(--cotd-ink-muted);
+  --text-3: var(--cotd-ink-muted);
+  --accent: var(--cotd-control);
+  --accent-hover: var(--cotd-control);
+  --accent-press: var(--cotd-control);
+  --accent-bright: var(--cotd-ink);
+  --on-accent: var(--cotd-on-control);
+
+  font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+:root[data-theme="dark"] body[data-page="colors-of-the-day"] {
+  /* Theme tokens, dark */
+  --cotd-surface: #0E0E10;
+  --cotd-surface-raised: #1C1C1E;
+  --cotd-ink: #FFFFFF;
+  --cotd-ink-muted: #8A8A90;
+  --cotd-hairline: #FFFFFF24;
+  --cotd-control: #F2F2F2;
+  --cotd-on-control: #1C1C1E;
+  --cotd-control-track: #3A3A3C;
+  --cotd-surface-glass: rgba(14, 14, 16, 0.86);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) body[data-page="colors-of-the-day"] {
+    --cotd-surface: #0E0E10;
+    --cotd-surface-raised: #1C1C1E;
+    --cotd-ink: #FFFFFF;
+    --cotd-ink-muted: #8A8A90;
+    --cotd-hairline: #FFFFFF24;
+    --cotd-control: #F2F2F2;
+    --cotd-on-control: #1C1C1E;
+    --cotd-control-track: #3A3A3C;
+    --cotd-surface-glass: rgba(14, 14, 16, 0.86);
+  }
+}
+
+/* ---------- Type ---------- */
+
+body[data-page="colors-of-the-day"] h1,
+body[data-page="colors-of-the-day"] h2,
+body[data-page="colors-of-the-day"] h3 {
+  font-weight: 800;
+}
+
+body[data-page="colors-of-the-day"] h1 {
+  letter-spacing: -0.045em;
+}
+
+body[data-page="colors-of-the-day"] .product-hero h1 {
+  max-width: 13ch;
+  font-size: clamp(2.75rem, 5.6vw, 4.6rem);
+}
+
+body[data-page="colors-of-the-day"] h2 {
+  letter-spacing: -0.04em;
+}
+
+body[data-page="colors-of-the-day"] h3 {
+  letter-spacing: -0.02em;
+}
+
+/* The design system's "label" style: small uppercase, muted, never coloured. */
+body[data-page="colors-of-the-day"] .eyebrow,
+.cotd-step-number {
+  color: var(--cotd-ink-muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+body[data-page="colors-of-the-day"] .product-name {
+  font-weight: 800;
+}
+
+body[data-page="colors-of-the-day"] .app-icon {
+  border-radius: 22.37%;
+  box-shadow: var(--cotd-shadow-icon);
+}
+
+/* ---------- Hero ---------- */
+
+.product-visual .cotd-mark {
+  position: relative;
+  width: min(100%, 440px);
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+.cotd-mark img {
+  width: 100%;
+  height: auto;
+}
+
+.cotd-mark-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .cotd-mark-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .cotd-mark-dark {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .cotd-mark-light {
+    display: none;
+  }
+
+  :root:not([data-theme]) .cotd-mark-dark {
+    display: block;
+  }
+}
+
+.cotd-beta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cotd-space-3);
+  margin-top: 36px;
+}
+
+/* Until the TestFlight invite exists: a quiet, non-interactive status pill. */
+.cotd-beta-status {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  border: 1px solid var(--cotd-hairline);
+  border-radius: 999px;
+  background: var(--cotd-surface-raised);
+  padding: 0 22px 0 18px;
+  color: var(--cotd-ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.cotd-beta-status svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  color: var(--cotd-ink-muted);
+}
+
+/* Ready for the invite link: a neutral control button (see README). */
+.cotd-beta-link {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  background: var(--cotd-control);
+  padding: 0 24px;
+  color: var(--cotd-on-control);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.cotd-beta-link:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* ---------- Steps ---------- */
+
+.cotd-steps {
+  border-top: 1px solid var(--border-subtle);
+  padding: clamp(72px, 10vw, 112px) 0;
+}
+
+.cotd-section-heading {
+  max-width: 680px;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+.cotd-section-heading h2 {
+  margin-bottom: 0;
+}
+
+.cotd-step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cotd-step {
+  min-width: 0;
+}
+
+.cotd-step-number {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.cotd-step h3 {
+  margin-bottom: 8px;
+  font-size: 1.35rem;
+}
+
+.cotd-step p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 0.98rem;
+}
+
+/* Visuals scale with their own width: 1cqw is 1% of the tile. */
+.cotd-visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  margin-bottom: var(--cotd-space-4);
+  border-radius: var(--cotd-radius-xl);
+  background: var(--cotd-surface-raised);
+  box-shadow: inset 0 0 0 1px var(--cotd-hairline);
+  container-type: inline-size;
+}
+
+.cotd-visual > * {
+  position: absolute;
+}
+
+/*
+ * The four steps follow one example round: the target #8E5CF0 is seen,
+ * recreated as #9A6AE6 (hue 263°, saturation 54%, brightness 90%), revealed.
+ */
+
+/* 01 See: the target colour alone, with only the timer ring on top
+   (white passes the 3:1 rule on this target: 4.25:1). */
+.cotd-visual--see {
+  background: #8E5CF0;
+  box-shadow: none;
+}
+
+.cotd-timer {
+  left: 50%;
+  bottom: 13cqw;
+  width: 22cqw;
+  height: 22cqw;
+  transform: translateX(-50%);
+}
+
+.cotd-timer circle {
+  fill: none;
+  stroke: var(--cotd-timer-ring);
+  stroke-width: 4;
+}
+
+.cotd-timer .cotd-timer-track {
+  stroke-opacity: 0.28;
+}
+
+/* 02 Choose: swatch, saturation/brightness panel, hue bar, confirm. */
+.cotd-picker-swatch {
+  left: 7cqw;
+  right: 7cqw;
+  top: 7cqw;
+  height: 30cqw;
+  border-radius: 8cqw;
+  background: #9A6AE6;
+}
+
+.cotd-picker-panel {
+  left: 7cqw;
+  right: 7cqw;
+  top: 42cqw;
+  height: 38cqw;
+  border-radius: 7cqw;
+  background:
+    linear-gradient(to top, #000000, rgba(0, 0, 0, 0)),
+    linear-gradient(to right, #FFFFFF, #6200FF);
+}
+
+.cotd-picker-hue {
+  left: 7cqw;
+  right: 7cqw;
+  top: 86cqw;
+  height: 11cqw;
+  border-radius: 6cqw;
+  background: linear-gradient(to right,
+    var(--cotd-hue-red), var(--cotd-hue-orange), var(--cotd-hue-yellow),
+    var(--cotd-hue-lime), var(--cotd-hue-mint), var(--cotd-hue-blue),
+    var(--cotd-hue-indigo), var(--cotd-hue-violet), var(--cotd-hue-pink));
+}
+
+.cotd-picker-handle {
+  box-sizing: border-box;
+  border: 1.6cqw solid #FFFFFF;
+  border-radius: 50%;
+  box-shadow: var(--cotd-shadow-handle);
+}
+
+.cotd-picker-handle--panel {
+  left: 47.5cqw;
+  top: 40cqw;
+  width: 12cqw;
+  height: 12cqw;
+  background: #9A6AE6;
+}
+
+.cotd-picker-handle--hue {
+  left: 63.3cqw;
+  top: 85cqw;
+  width: 13cqw;
+  height: 13cqw;
+  background: #6200FF;
+}
+
+.cotd-picker-confirm {
+  left: 50%;
+  top: 102cqw;
+  width: 19cqw;
+  height: 19cqw;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--cotd-control);
+  transform: translateX(-50%);
+}
+
+.cotd-picker-confirm svg {
+  width: 48%;
+  height: 48%;
+}
+
+.cotd-picker-confirm path {
+  fill: none;
+  stroke: var(--cotd-on-control);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The split circle: target left, choice right. */
+.cotd-split {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--target) 50%, var(--choice) 50%);
+}
+
+/* 03 Reveal */
+.cotd-reveal-ring {
+  left: 50%;
+  top: 12cqw;
+  width: 66cqw;
+  height: 66cqw;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 0.6cqw var(--cotd-hairline);
+  transform: translateX(-50%);
+}
+
+.cotd-visual .cotd-reveal-split {
+  left: 50%;
+  top: 17cqw;
+  width: 56cqw;
+  transform: translateX(-50%);
+}
+
+.cotd-reveal-score {
+  left: 0;
+  right: 0;
+  top: 80cqw;
+  color: var(--cotd-ink);
+  font-size: 22cqw;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-align: center;
+}
+
+.cotd-dots {
+  left: 50%;
+  top: 110cqw;
+  display: flex;
+  gap: 3.6cqw;
+  transform: translateX(-50%);
+}
+
+.cotd-dots span {
+  width: 2.6cqw;
+  height: 2.6cqw;
+  border-radius: 50%;
+  background: var(--cotd-control-track);
+}
+
+.cotd-dots .is-done {
+  background: var(--cotd-ink);
+}
+
+/* 04 Share: the card on its own dark ground. */
+.cotd-visual--share {
+  display: flex;
+  align-items: center;
+  background: var(--cotd-share-ground);
+  /* The card is always dark; the dark hairline keeps its edge visible on a dark page. */
+  box-shadow: inset 0 0 0 1px var(--cotd-band-hairline);
+}
+
+.cotd-visual--share > .cotd-card {
+  position: relative;
+}
+
+/* ---------- Share card (1080 × 1080 spec; 1cqw = 10.8 px of the original) ---------- */
+
+.cotd-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--cotd-share-ground);
+  color: var(--cotd-share-ink);
+  container-type: inline-size;
+  font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  text-align: center;
+}
+
+.cotd-card > * {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
+
+.cotd-card > .cotd-card-number {
+  top: 12.222cqw;
+  color: var(--cotd-share-muted);
+  font-size: 4.444cqw;
+  font-weight: 700;
+  line-height: 5.185cqw;
+}
+
+.cotd-card > .cotd-card-total {
+  top: 18.148cqw;
+  color: var(--cotd-share-ink);
+  font-size: 26.667cqw;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 26.667cqw;
+}
+
+.cotd-card > .cotd-card-of {
+  top: 45.556cqw;
+  color: var(--cotd-share-muted);
+  font-size: 5.185cqw;
+  font-weight: 600;
+  line-height: 5.926cqw;
+}
+
+.cotd-card > .cotd-card-rounds {
+  top: 54.63cqw;
+  left: 5.556cqw;
+  right: 5.556cqw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cotd-card-round {
+  width: 14.815cqw;
+}
+
+.cotd-card-round .cotd-split {
+  width: 100%;
+}
+
+.cotd-card .cotd-card-round span {
+  display: block;
+  margin-top: 2.037cqw;
+  color: var(--cotd-share-score);
+  font-size: 3.704cqw;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 4.444cqw;
+}
+
+.cotd-card > .cotd-card-mark {
+  top: 81.852cqw;
+  left: 47.222cqw;
+  right: auto;
+  width: 5.556cqw;
+  height: 5.556cqw;
+}
+
+/* ---------- Share band ---------- */
+
+.cotd-share {
+  border-block: 1px solid var(--cotd-band-hairline);
+  background: var(--cotd-band);
+  padding: clamp(72px, 10vw, 120px) 0;
+  color: var(--cotd-share-ink);
+}
+
+.cotd-share-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+  align-items: center;
+  gap: clamp(40px, 8vw, 96px);
+}
+
+body[data-page="colors-of-the-day"] .cotd-share .eyebrow {
+  color: var(--cotd-share-muted);
+}
+
+body[data-page="colors-of-the-day"] .cotd-share h2 {
+  max-width: 14ch;
+  color: var(--cotd-share-ink);
+}
+
+.cotd-share-copy p:last-child {
+  max-width: 46ch;
+  margin-bottom: 0;
+  color: var(--cotd-share-score);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.65;
+}
+
+.cotd-share .cotd-card {
+  border-radius: var(--cotd-radius-sm);
+  box-shadow: 0 0 0 1px var(--cotd-band-hairline);
+}
+
+/* ---------- Benefits ---------- */
+
+body[data-page="colors-of-the-day"] .benefit h3 {
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 980px) {
+  .cotd-step-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 48px;
+  }
+
+  .cotd-share-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .cotd-share .cotd-card {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 780px) {
+  .product-visual .cotd-mark {
+    width: min(64vw, 300px);
+    margin-inline: auto;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .cotd-step-grid {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+
+  .cotd-step {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    align-items: start;
+    gap: 20px;
+  }
+
+  .cotd-step .cotd-visual {
+    margin-bottom: 0;
+    border-radius: 20px;
+  }
+
+  .cotd-step h3 {
+    font-size: 1.2rem;
+  }
+
+  .cotd-step p {
+    font-size: 0.95rem;
+  }
+}

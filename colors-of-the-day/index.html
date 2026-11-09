@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colors of the Day — Daily Colour Memory Game for iPhone | Flux76</title>
+  <meta name="description" content="Colors of the Day is a daily colour memory game for iPhone. See five colours, recreate them from memory and share your score. Coming soon to TestFlight.">
+  <meta name="author" content="Flux76">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#F3F1EC" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E0E10" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Colors of the Day — Five colours. From memory.">
+  <meta property="og:description" content="A daily colour memory game for iPhone. Everyone gets the same five colours; recreate each one from memory. Coming soon to TestFlight.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flux76.app/colors-of-the-day/">
+  <meta property="og:site_name" content="Flux76 Apps">
+  <meta property="og:image" content="https://flux76.app/assets/img/colors-of-the-day/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Colors of the Day — a daily colour memory game for iPhone">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Colors of the Day — Five colours. From memory.">
+  <meta name="twitter:description" content="A daily colour memory game for iPhone. Coming soon to TestFlight.">
+  <meta name="twitter:image" content="https://flux76.app/assets/img/colors-of-the-day/og.png">
+  <meta name="twitter:image:alt" content="Colors of the Day — a daily colour memory game for iPhone">
+  <link rel="canonical" href="https://flux76.app/colors-of-the-day/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/manrope/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/colors-of-the-day.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://flux76.com/#organization",
+          "name": "Flux76",
+          "url": "https://flux76.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://flux76.app/assets/img/flux76-mark.svg"
+          },
+          "sameAs": [
+            "https://github.com/Flux76HQ",
+            "https://bsky.app/profile/flux76hq.bsky.social"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://flux76.app/#website",
+          "url": "https://flux76.app/",
+          "name": "Flux76 Apps",
+          "publisher": {
+            "@id": "https://flux76.com/#organization"
+          },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://flux76.app/colors-of-the-day/#primaryimage",
+          "url": "https://flux76.app/assets/img/colors-of-the-day/og.png",
+          "contentUrl": "https://flux76.app/assets/img/colors-of-the-day/og.png",
+          "width": 1200,
+          "height": 630,
+          "caption": "Colors of the Day — a daily colour memory game for iPhone"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://flux76.app/colors-of-the-day/#webpage",
+          "url": "https://flux76.app/colors-of-the-day/",
+          "name": "Colors of the Day — Daily Colour Memory Game for iPhone",
+          "description": "Colors of the Day is an upcoming daily colour memory game for iPhone by Flux76.",
+          "isPartOf": {
+            "@id": "https://flux76.app/#website"
+          },
+          "primaryImageOfPage": {
+            "@id": "https://flux76.app/colors-of-the-day/#primaryimage"
+          },
+          "mainEntity": {
+            "@id": "https://flux76.app/colors-of-the-day/#app"
+          },
+          "inLanguage": "en",
+          "dateModified": "2026-11-09"
+        },
+        {
+          "@type": [
+            "MobileApplication",
+            "SoftwareApplication"
+          ],
+          "@id": "https://flux76.app/colors-of-the-day/#app",
+          "name": "Colors of the Day",
+          "url": "https://flux76.app/colors-of-the-day/",
+          "description": "Colors of the Day is a daily colour memory game for iPhone. Every day all players get the same five colours. Each colour is shown for 5, 4, 3, 2 and 1 seconds in turn, then recreated from memory with a colour picker. Each round scores 0 to 100 points, up to 500 a day.",
+          "applicationCategory": "GameApplication",
+          "applicationSubCategory": "Daily puzzle game",
+          "genre": "Puzzle",
+          "operatingSystem": "iOS",
+          "availableOnDevice": [
+            "iPhone"
+          ],
+          "image": {
+            "@id": "https://flux76.app/colors-of-the-day/#primaryimage"
+          },
+          "publisher": {
+            "@id": "https://flux76.com/#organization"
+          },
+          "author": {
+            "@id": "https://flux76.com/#organization"
+          },
+          "isAccessibleForFree": true,
+          "featureList": [
+            "The same five colours for every player, every day",
+            "Viewing time of 5, 4, 3, 2 and 1 seconds across five rounds",
+            "One-thumb colour picker for hue, saturation and brightness",
+            "Split-circle reveal with 0 to 100 points per round",
+            "Language-free share card with numbers and colours only",
+            "Neutral grey interface so nothing alters how a colour is seen",
+            "No advertising"
+          ],
+          "mainEntityOfPage": {
+            "@id": "https://flux76.app/colors-of-the-day/#webpage"
+          },
+          "dateModified": "2026-11-09"
+        }
+      ]
+    }
+  </script>
+  <script>
+    (() => {
+      const theme = localStorage.getItem("flux76-theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.dataset.theme = theme;
+      }
+    })();
+  </script>
+</head>
+<body data-page="colors-of-the-day">
+  <header class="site-header">
+    <nav class="shell nav" aria-label="Primary">
+      <a class="brand" href="/" aria-label="Flux76 Apps">
+        <img class="logo-light" src="/assets/img/flux76-lockup-light.svg" alt="Flux76" width="1360" height="360">
+        <img class="logo-dark" src="/assets/img/flux76-lockup-dark.svg" alt="Flux76" width="1360" height="360">
+        <img class="logo-mark" src="/assets/img/flux76-mark.svg" alt="Flux76" width="360" height="360">
+      </a>
+      <div class="nav-actions">
+        <a class="back-link" href="/">Apps</a>
+        <select class="control language-select" aria-label="Language">
+          <option value="en">English</option>
+          <option value="cs">Čeština</option>
+          <option value="da">Dansk</option>
+          <option value="de">Deutsch</option>
+          <option value="el">Ελληνικά</option>
+          <option value="es">Español</option>
+          <option value="fi">Suomi</option>
+          <option value="fr">Français</option>
+          <option value="hu">Magyar</option>
+          <option value="it">Italiano</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="nl">Nederlands</option>
+          <option value="no">Norsk</option>
+          <option value="pl">Polski</option>
+          <option value="pt">Português</option>
+          <option value="sv">Svenska</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="zh">中文</option>
+        </select>
+        <select class="control theme-select" aria-label="Appearance">
+          <option value="system">System</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="shell product-hero">
+      <div class="product-copy">
+        <div class="product-lockup">
+          <img class="app-icon" src="/assets/img/colors-of-the-day/icon.png" alt="Colors of the Day" width="512" height="512">
+          <div>
+            <p class="product-name">Colors of the Day</p>
+            <p class="product-platform" data-i18n="platform">For iPhone</p>
+          </div>
+        </div>
+        <p class="eyebrow" data-i18n="eyebrow">A daily colour memory game</p>
+        <h1 data-i18n="hero_title">Five colours. From memory.</h1>
+        <p class="hero-lede" data-i18n="hero_lede">Every day, everyone gets the same five colours. You see each one for a moment, then recreate it from memory. The closer you get, the more the circle looks like one colour.</p>
+
+        <div class="cotd-beta">
+          <!--
+            TestFlight: there is no invite link yet. When it exists, replace the
+            <p class="cotd-beta-status"> below with:
+            <a class="cotd-beta-link" href="https://testflight.apple.com/join/XXXXXXXX" data-i18n="beta_join">Join the beta on TestFlight</a>
+            The "beta_join" text is already translated in all 20 locales.
+          -->
+          <p class="cotd-beta-status">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
+            <span data-i18n="beta_soon">Coming soon to TestFlight</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="product-visual">
+        <figure class="cotd-mark">
+          <img class="cotd-mark-light" src="/assets/img/colors-of-the-day/mark-light.webp" alt="" width="760" height="760">
+          <img class="cotd-mark-dark" src="/assets/img/colors-of-the-day/mark-dark.webp" alt="" width="760" height="760">
+        </figure>
+      </div>
+    </section>
+
+    <section class="cotd-steps" aria-labelledby="steps-title">
+      <div class="shell">
+        <div class="cotd-section-heading">
+          <p class="eyebrow" data-i18n="steps_eyebrow">How a day works</p>
+          <h2 id="steps-title" data-i18n="steps_title">Five rounds. About two minutes.</h2>
+        </div>
+
+        <ol class="cotd-step-grid">
+          <li class="cotd-step">
+            <div class="cotd-visual cotd-visual--see" aria-hidden="true">
+              <svg class="cotd-timer" viewBox="0 0 72 72"><circle class="cotd-timer-track" cx="36" cy="36" r="30"/><circle cx="36" cy="36" r="30" stroke-linecap="round" stroke-dasharray="188.5" stroke-dashoffset="75" transform="rotate(-90 36 36)"/></svg>
+            </div>
+            <div>
+              <span class="cotd-step-number">01</span>
+              <h3 data-i18n="step_1_title">See</h3>
+              <p data-i18n="step_1_text">A colour fills the screen. You get 5 seconds in the first round, then 4, 3, 2 and finally 1.</p>
+            </div>
+          </li>
+          <li class="cotd-step">
+            <div class="cotd-visual cotd-visual--choose" aria-hidden="true">
+              <div class="cotd-picker-swatch"></div>
+              <div class="cotd-picker-panel"></div>
+              <div class="cotd-picker-handle cotd-picker-handle--panel"></div>
+              <div class="cotd-picker-hue"></div>
+              <div class="cotd-picker-handle cotd-picker-handle--hue"></div>
+              <div class="cotd-picker-confirm"><svg viewBox="0 0 40 40"><path d="M9 21.5l8 8 15-17"/></svg></div>
+            </div>
+            <div>
+              <span class="cotd-step-number">02</span>
+              <h3 data-i18n="step_2_title">Choose</h3>
+              <p data-i18n="step_2_text">Recreate it with one thumb by picking hue, saturation and brightness. No numbers, no hex codes.</p>
+            </div>
+          </li>
+          <li class="cotd-step">
+            <div class="cotd-visual cotd-visual--reveal" aria-hidden="true">
+              <div class="cotd-reveal-ring"></div>
+              <div class="cotd-split cotd-reveal-split" style="--target: #8E5CF0; --choice: #9A6AE6;"></div>
+              <div class="cotd-reveal-score">78</div>
+              <div class="cotd-dots"><span class="is-done"></span><span class="is-done"></span><span class="is-done"></span><span></span><span></span></div>
+            </div>
+            <div>
+              <span class="cotd-step-number">03</span>
+              <h3 data-i18n="step_3_title">Reveal</h3>
+              <p data-i18n="step_3_text">The circle splits: the colour you saw on the left, your choice on the right. Each round scores up to 100 points.</p>
+            </div>
+          </li>
+          <li class="cotd-step">
+            <div class="cotd-visual cotd-visual--share" aria-hidden="true">
+              <div class="cotd-card">
+                <p class="cotd-card-number">#3</p>
+                <p class="cotd-card-total">347</p>
+                <p class="cotd-card-of">/ 500</p>
+                <div class="cotd-card-rounds">
+                  <div class="cotd-card-round"><div class="cotd-split" style="--target: #F26B3A; --choice: #F5703F;"></div><span>92</span></div>
+                  <div class="cotd-card-round"><div class="cotd-split" style="--target: #2FB6A3; --choice: #3FA1B8;"></div><span>61</span></div>
+                  <div class="cotd-card-round"><div class="cotd-split" style="--target: #8E5CF0; --choice: #9A6AE6;"></div><span>78</span></div>
+                  <div class="cotd-card-round"><div class="cotd-split" style="--target: #E9C440; --choice: #E0A53C;"></div><span>45</span></div>
+                  <div class="cotd-card-round"><div class="cotd-split" style="--target: #D6407E; --choice: #E05A8A;"></div><span>71</span></div>
+                </div>
+                <img class="cotd-card-mark" src="/assets/img/colors-of-the-day/mark-dark-small.webp" alt="" width="120" height="120">
+              </div>
+            </div>
+            <div>
+              <span class="cotd-step-number">04</span>
+              <h3 data-i18n="step_4_title">Share</h3>
+              <p data-i18n="step_4_text">Up to 500 points a day. Share your result as one image with only numbers and colours.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="cotd-share" aria-labelledby="share-title">
+      <div class="shell cotd-share-inner">
+        <div class="cotd-share-copy">
+          <p class="eyebrow" data-i18n="share_eyebrow">The share card</p>
+          <h2 id="share-title" data-i18n="share_title">One image. No words needed.</h2>
+          <p data-i18n="share_text">Your puzzle number, your total and five split circles. It reads the same in every language, and the closer each circle looks to one colour, the better you remembered it.</p>
+        </div>
+        <div class="cotd-card" role="img" aria-label="Example share card: puzzle 3, 347 out of 500 points, five split circles" data-i18n-aria="share_card_label">
+          <p class="cotd-card-number" aria-hidden="true">#3</p>
+          <p class="cotd-card-total" aria-hidden="true">347</p>
+          <p class="cotd-card-of" aria-hidden="true">/ 500</p>
+          <div class="cotd-card-rounds" aria-hidden="true">
+            <div class="cotd-card-round"><div class="cotd-split" style="--target: #F26B3A; --choice: #F5703F;"></div><span>92</span></div>
+            <div class="cotd-card-round"><div class="cotd-split" style="--target: #2FB6A3; --choice: #3FA1B8;"></div><span>61</span></div>
+            <div class="cotd-card-round"><div class="cotd-split" style="--target: #8E5CF0; --choice: #9A6AE6;"></div><span>78</span></div>
+            <div class="cotd-card-round"><div class="cotd-split" style="--target: #E9C440; --choice: #E0A53C;"></div><span>45</span></div>
+            <div class="cotd-card-round"><div class="cotd-split" style="--target: #D6407E; --choice: #E05A8A;"></div><span>71</span></div>
+          </div>
+          <img class="cotd-card-mark" src="/assets/img/colors-of-the-day/mark-dark-small.webp" alt="" width="120" height="120">
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Colors of the Day principles">
+      <div class="shell benefit-grid">
+        <article class="benefit">
+          <h3 data-i18n="benefit_1_title">The same colours for everyone</h3>
+          <p data-i18n="benefit_1_text">The whole world plays the same five colours each day, so every score can be compared.</p>
+        </article>
+        <article class="benefit">
+          <h3 data-i18n="benefit_2_title">A fair, neutral frame</h3>
+          <p data-i18n="benefit_2_text">Buttons and backgrounds stay grey, so nothing next to the colour changes how you see it.</p>
+        </article>
+        <article class="benefit">
+          <h3 data-i18n="benefit_3_title">Calm by design</h3>
+          <p data-i18n="benefit_3_text">Once a day, about two minutes. No ads, nothing interrupting your game, and no red when you miss.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="product-summary" aria-labelledby="product-summary-title">
+      <div class="shell product-summary-copy">
+        <p class="eyebrow">Colors of the Day facts</p>
+        <h2 id="product-summary-title">A daily colour memory game for iPhone.</h2>
+        <p>Colors of the Day is a daily puzzle game for iPhone, made by Flux76. Every day, all players get the same five colours. Each colour is shown for 5, 4, 3, 2 and 1 seconds in turn, after which the player recreates it from memory with a colour picker. Each round scores 0 to 100 points, for a maximum of 500 a day, and a game takes about two minutes. The daily puzzle and sharing are free, and there are no ads. The app is in development; a TestFlight beta is coming soon.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>&copy; <span data-current-year></span> Flux76</p>
+      <div class="footer-links">
+        <a href="/">Apps</a>
+        <a href="https://flux76.com">Flux76.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/site.js"></script>
+</body>
+</html>
