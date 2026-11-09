@@ -25,7 +25,12 @@
   "benefit_2_text": "Schaltflächen und Hintergründe bleiben grau, damit nichts neben der Farbe verändert, wie du sie siehst.",
   "benefit_3_title": "Bewusst ruhig",
   "benefit_3_text": "Einmal am Tag, etwa zwei Minuten. Keine Werbung, keine Unterbrechungen im Spiel und kein Rot, wenn du danebenliegst.",
-  "home_platform": "iPhone · Bald verfügbar",
+  "home_platform": "iPhone · Beta auf TestFlight",
   "home_description": "Ein tägliches Farbgedächtnisspiel. Sieh dir fünf Farben an und stell sie aus dem Gedächtnis nach.",
-  "privacy_link": "Datenschutzerklärung"
+  "privacy_link": "Datenschutzerklärung",
+  "facts_eyebrow": "Colors of the Day auf einen Blick",
+  "facts_title": "Ein tägliches Farbgedächtnisspiel für iPhone.",
+  "facts_text": "Colors of the Day ist ein tägliches Rätselspiel für iPhone von Flux76. Jeden Tag bekommen alle Spielerinnen und Spieler dieselben fünf Farben. Jede Farbe wird nacheinander 5, 4, 3, 2 und 1 Sekunde lang gezeigt und anschließend mit einem Farbwähler aus dem Gedächtnis nachgestellt. Jede Runde bringt 0 bis 100 Punkte, höchstens 500 am Tag, und ein Spiel dauert etwa zwei Minuten. Das tägliche Rätsel und das Teilen sind kostenlos, und es gibt keine Werbung. Die App ist in Entwicklung; eine Beta auf TestFlight folgt bald.",
+  "facts_text_beta": "Colors of the Day ist ein tägliches Rätselspiel für iPhone von Flux76. Jeden Tag bekommen alle Spielerinnen und Spieler dieselben fünf Farben. Jede Farbe wird nacheinander 5, 4, 3, 2 und 1 Sekunde lang gezeigt und anschließend mit einem Farbwähler aus dem Gedächtnis nachgestellt. Jede Runde bringt 0 bis 100 Punkte, höchstens 500 am Tag, und ein Spiel dauert etwa zwei Minuten. Das tägliche Rätsel und das Teilen sind kostenlos, und es gibt keine Werbung. Die App ist in Entwicklung und als Beta auf TestFlight verfügbar.",
+  "benefits_label": "Prinzipien von Colors of the Day"
 }

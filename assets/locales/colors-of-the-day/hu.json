@@ -25,7 +25,12 @@
   "benefit_2_text": "A gombok és a hátterek szürkék maradnak, így a szín mellett semmi sem befolyásolja, hogyan látja azt.",
   "benefit_3_title": "Nyugalomra tervezve",
   "benefit_3_text": "Naponta egyszer, körülbelül két perc. Nincsenek hirdetések, semmi sem szakítja meg a játékot, és nincs piros, ha mellétalál.",
-  "home_platform": "iPhone · Hamarosan",
+  "home_platform": "iPhone · Béta a TestFlighton",
   "home_description": "Napi színmemória-játék. Nézzen meg öt színt, majd alkossa újra őket emlékezetből.",
-  "privacy_link": "Adatvédelmi irányelvek"
+  "privacy_link": "Adatvédelmi irányelvek",
+  "facts_eyebrow": "Colors of the Day röviden",
+  "facts_title": "Napi színmemória-játék iPhone-ra.",
+  "facts_text": "A Colors of the Day a Flux76 napi fejtörő játéka iPhone-ra. Minden nap minden játékos ugyanazt az öt színt kapja. Az egyes színek egymás után 5, 4, 3, 2 és 1 másodpercig láthatók, majd a játékos egy színválasztóval emlékezetből újraalkotja őket. Minden kör 0–100 pontot ér, naponta legfeljebb 500-at, és egy játék körülbelül két percig tart. A napi rejtvény és a megosztás ingyenes, hirdetések nincsenek. Az app fejlesztés alatt áll; hamarosan érkezik a béta a TestFlighton.",
+  "facts_text_beta": "A Colors of the Day a Flux76 napi fejtörő játéka iPhone-ra. Minden nap minden játékos ugyanazt az öt színt kapja. Az egyes színek egymás után 5, 4, 3, 2 és 1 másodpercig láthatók, majd a játékos egy színválasztóval emlékezetből újraalkotja őket. Minden kör 0–100 pontot ér, naponta legfeljebb 500-at, és egy játék körülbelül két percig tart. A napi rejtvény és a megosztás ingyenes, hirdetések nincsenek. Az app fejlesztés alatt áll, és bétaként elérhető a TestFlighton.",
+  "benefits_label": "A Colors of the Day alapelvei"
 }

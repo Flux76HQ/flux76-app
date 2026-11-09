@@ -25,7 +25,12 @@
   "benefit_2_text": "Knappar och bakgrunder förblir grå, så att inget bredvid färgen påverkar hur du uppfattar den.",
   "benefit_3_title": "Lugn i grunden",
   "benefit_3_text": "En gång om dagen, ungefär två minuter. Ingen reklam, inga avbrott under spelet och inget rött när du missar.",
-  "home_platform": "iPhone · Kommer snart",
+  "home_platform": "iPhone · Beta på TestFlight",
   "home_description": "Ett dagligt färgminnesspel. Se fem färger och återskapa dem ur minnet.",
-  "privacy_link": "Integritetspolicy"
+  "privacy_link": "Integritetspolicy",
+  "facts_eyebrow": "Colors of the Day i korthet",
+  "facts_title": "Ett dagligt färgminnesspel för iPhone.",
+  "facts_text": "Colors of the Day är ett dagligt pusselspel för iPhone, skapat av Flux76. Varje dag får alla spelare samma fem färger. Varje färg visas i tur och ordning i 5, 4, 3, 2 och 1 sekund, och sedan återskapar spelaren den ur minnet med en färgväljare. Varje runda ger 0 till 100 poäng, högst 500 per dag, och ett spel tar ungefär två minuter. Dagens pussel och delning är gratis, och det finns ingen reklam. Appen är under utveckling; en beta på TestFlight kommer snart.",
+  "facts_text_beta": "Colors of the Day är ett dagligt pusselspel för iPhone, skapat av Flux76. Varje dag får alla spelare samma fem färger. Varje färg visas i tur och ordning i 5, 4, 3, 2 och 1 sekund, och sedan återskapar spelaren den ur minnet med en färgväljare. Varje runda ger 0 till 100 poäng, högst 500 per dag, och ett spel tar ungefär två minuter. Dagens pussel och delning är gratis, och det finns ingen reklam. Appen är under utveckling och finns som beta på TestFlight.",
+  "benefits_label": "Principerna bakom Colors of the Day"
 }

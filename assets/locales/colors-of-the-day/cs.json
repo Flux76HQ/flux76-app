@@ -25,7 +25,12 @@
   "benefit_2_text": "Tlačítka a pozadí zůstávají šedé, takže nic vedle barvy neovlivní, jak ji vnímáte.",
   "benefit_3_title": "Navrženo pro klid",
   "benefit_3_text": "Jednou denně, zhruba dvě minuty. Žádné reklamy, nic nepřeruší vaši hru a žádná červená, když se netrefíte.",
-  "home_platform": "iPhone · Již brzy",
+  "home_platform": "iPhone · Beta na TestFlightu",
   "home_description": "Denní hra na paměť barev. Uvidíte pět barev a pak je zpaměti vytvoříte znovu.",
-  "privacy_link": "Zásady ochrany osobních údajů"
+  "privacy_link": "Zásady ochrany osobních údajů",
+  "facts_eyebrow": "Colors of the Day v kostce",
+  "facts_title": "Denní hra na paměť barev pro iPhone.",
+  "facts_text": "Colors of the Day je denní hádanka pro iPhone od Flux76. Každý den dostanou všichni hráči stejných pět barev. Každá barva se postupně zobrazí na 5, 4, 3, 2 a 1 sekundu a hráč ji pak zpaměti vytvoří znovu pomocí výběru barev. Každé kolo přinese 0 až 100 bodů, nejvýše 500 za den, a jedna hra trvá zhruba dvě minuty. Denní hádanka i sdílení jsou zdarma a nejsou tu žádné reklamy. Aplikace je ve vývoji; beta na TestFlightu bude brzy k dispozici.",
+  "facts_text_beta": "Colors of the Day je denní hádanka pro iPhone od Flux76. Každý den dostanou všichni hráči stejných pět barev. Každá barva se postupně zobrazí na 5, 4, 3, 2 a 1 sekundu a hráč ji pak zpaměti vytvoří znovu pomocí výběru barev. Každé kolo přinese 0 až 100 bodů, nejvýše 500 za den, a jedna hra trvá zhruba dvě minuty. Denní hádanka i sdílení jsou zdarma a nejsou tu žádné reklamy. Aplikace je ve vývoji a je k dispozici jako beta na TestFlightu.",
+  "benefits_label": "Principy Colors of the Day"
 }

@@ -34,12 +34,12 @@ DiscVault is a standalone iPhone and iPad application for cataloguing physical f
 
 ## Colors of the Day
 
-Colors of the Day is an upcoming daily colour memory game for iPhone. It is in development and not yet available; a TestFlight beta is coming soon.
+Colors of the Day is a daily colour memory game for iPhone. It is in development and available as a public beta on TestFlight: https://testflight.apple.com/join/hN7d5dkp
 
 - Official product page: https://flux76.app/colors-of-the-day/
 - Privacy policy: https://flux76.app/colors-of-the-day/privacy/ (Dutch: https://flux76.app/colors-of-the-day/privacy/nl/)
 - Platform: iPhone
-- Status: in development; TestFlight beta coming soon; no App Store listing yet
+- Status: public beta on TestFlight (https://testflight.apple.com/join/hN7d5dkp); no App Store listing yet
 - Developer and publisher: Flux76
 
 ### How it works
