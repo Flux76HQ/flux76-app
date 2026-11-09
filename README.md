@@ -2,7 +2,7 @@
 
 Statische promotiesite voor de apps van [Flux76](https://flux76.com). De homepage geeft een
 rustig overzicht van alle apps. Iedere app krijgt een eigen promotiepagina: **DiscVault** voor
-iPhone en iPad, en **Colors of the Day** voor iPhone (in ontwikkeling, TestFlight volgt).
+iPhone en iPad, en **Colors of the Day** voor iPhone (bèta op TestFlight).
 
 - **Techniek:** statische HTML met gedeelde CSS en JavaScript, zonder build-stap.
 - **Talen:** dezelfde 20 locales als discvault.eu, met de bestaande DiscVault-vertalingen
@@ -89,17 +89,14 @@ aankopen, spelgeschiedenis alleen in `UserDefaults` op het toestel, foto's allee
 onlinefunctie, Pro-aankoop, landenranglijst), werk dan eerst dit beleid bij**, in beide talen,
 met een nieuwe datum, en pas het App Privacy-label in App Store Connect aan.
 
-### TestFlight-link toevoegen
+### TestFlight
 
-Er is nog geen TestFlight-uitnodiging. De pagina toont daarom een neutrale, niet-klikbare melding
-"Coming soon to TestFlight". Zodra de link er is, vervang je in `colors-of-the-day/index.html` het
-element `<p class="cotd-beta-status">…</p>` door:
+De openbare bèta staat op TestFlight: <https://testflight.apple.com/join/hN7d5dkp>. De pagina linkt ernaar met een neutrale knop
+(`.cotd-beta-link`, tekst `beta_join`), en het feitenblok gebruikt `facts_text_beta`. Op de
+homepage staat bij de app "iPhone · Beta on TestFlight" (`home_platform`). Alle drie zijn vertaald
+in de 20 talen.
 
-```html
-<a class="cotd-beta-link" href="https://testflight.apple.com/join/XXXXXXXX" data-i18n="beta_join">Join the beta on TestFlight</a>
-```
-
-De tekst `beta_join` is al vertaald in alle 20 talen en de stijl `.cotd-beta-link` staat klaar.
-Zet daarna in het feitenblok `data-i18n="facts_text"` om naar `data-i18n="facts_text_beta"` (ook
-vertaald in alle 20 talen, met "beschikbaar als bèta op TestFlight") en pas de Engelse tekst in de
-HTML daarop aan. Werk ten slotte de status in `llms.txt` bij.
+Verandert de uitnodigingslink, pas dan de `href` van `.cotd-beta-link` in
+`colors-of-the-day/index.html` en de link in `llms.txt` aan. Komt de app in de App Store, vervang
+de knop dan door de App Store-badge (zoals op de DiscVault-pagina) en werk `home_platform`,
+`facts_text_beta` en `llms.txt` bij.

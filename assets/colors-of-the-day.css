@@ -230,31 +230,7 @@ body.cotd .app-icon {
   margin-top: 36px;
 }
 
-/* Until the TestFlight invite exists: a quiet, non-interactive status pill. */
-.cotd-beta-status {
-  display: inline-flex;
-  min-height: 52px;
-  align-items: center;
-  gap: 10px;
-  margin: 0;
-  border: 1px solid var(--cotd-hairline);
-  border-radius: 999px;
-  background: var(--cotd-surface-raised);
-  padding: 0 22px 0 18px;
-  color: var(--cotd-ink);
-  font-size: 0.95rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.cotd-beta-status svg {
-  width: 20px;
-  height: 20px;
-  flex: none;
-  color: var(--cotd-ink-muted);
-}
-
-/* Ready for the invite link: a neutral control button (see README). */
+/* The TestFlight invite: a neutral control button, never coloured. */
 .cotd-beta-link {
   display: inline-flex;
   min-height: 52px;
@@ -273,6 +249,12 @@ body.cotd .app-icon {
 .cotd-beta-link:hover {
   opacity: 0.88;
   transform: translateY(-1px);
+}
+
+.cotd-beta-link svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
 }
 
 /* ---------- Steps ---------- */
