@@ -22,6 +22,7 @@ python3 -m http.server 8000
 index.html                      # rustig overzicht van alle apps
 discvault/index.html            # DiscVault-promotiepagina
 colors-of-the-day/index.html    # Colors of the Day-promotiepagina
+colors-of-the-day/privacy/      # privacybeleid (Engels; nl/ is de Nederlandse versie)
 assets/site.css                 # gedeelde responsieve vormgeving
 assets/colors-of-the-day.css    # Colors of the Day-vormgeving (eigen designsysteem)
 assets/site.js                  # taal- en weergavevoorkeuren
@@ -69,6 +70,24 @@ app), niet het Flux76-palet:
 - **Beelden:** `icon.png` (512 px, uit `AppIcon-1024.png`), `mark-light.webp` / `mark-dark.webp`
   (uit `Mark-light.png` / `Mark-dark.png`) en `og.png` (1200 × 630). Het merkteken wordt nooit
   nagetekend; de gesplitste cirkels, timerring en kleurkiezer op de pagina zijn HTML/CSS.
+
+### Privacybeleid
+
+Het privacybeleid staat op twee vaste adressen, zoals App Store Connect ze per taal vraagt:
+
+| App Store Connect-taal | Privacy Policy URL |
+|---|---|
+| English (U.S.) | `https://flux76.app/colors-of-the-day/privacy` |
+| Dutch | `https://flux76.app/colors-of-the-day/privacy/nl` |
+
+GitHub Pages stuurt beide adressen zonder slash door naar de map met slash. De pagina's zijn
+statisch en per taal geschreven (geen vertaling via JavaScript); `site.js` laat taal en
+taalvoorkeur op deze pagina's met rust. De inhoud volgt wat de app nu doet (zie de README van
+`Flux76HQ/ios_color-of-the-day`): geen netwerk, account, analytics, advertenties of in-app
+aankopen, spelgeschiedenis alleen in `UserDefaults` op het toestel, foto's alleen toevoegen bij
+"Save Image", en feedback via mail naar `support@flux76.com`. **Verandert de app hierin (een
+onlinefunctie, Pro-aankoop, landenranglijst), werk dan eerst dit beleid bij**, in beide talen,
+met een nieuwe datum, en pas het App Privacy-label in App Store Connect aan.
 
 ### TestFlight-link toevoegen
 

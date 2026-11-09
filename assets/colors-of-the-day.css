@@ -6,9 +6,10 @@
  * game's own colours (targets, choices, split circles) and in the brand mark,
  * never as buttons, links, eyebrows or states.
  *
- * Loaded after site.css on /colors-of-the-day/ only. It maps the shared site
- * variables onto the app's tokens, so the shared header and footer turn neutral
- * on this page without changes to site.css.
+ * Loaded after site.css on the Colors of the Day pages (body.cotd): the app
+ * page and its privacy policy. It maps the shared site variables onto the
+ * app's tokens, so the shared header and footer turn neutral on these pages
+ * without changes to site.css.
  */
 
 /* Manrope (SIL OFL 1.1, see /assets/fonts/manrope/OFL.txt), self-hosted. */
@@ -50,7 +51,7 @@
 
 /* ---------- Tokens ---------- */
 
-body[data-page="colors-of-the-day"] {
+body.cotd {
   /* Theme tokens, light (tokens.json → color, theme "light") */
   --cotd-surface: #F3F1EC;
   --cotd-surface-raised: #FFFFFF;
@@ -113,7 +114,7 @@ body[data-page="colors-of-the-day"] {
   font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-:root[data-theme="dark"] body[data-page="colors-of-the-day"] {
+:root[data-theme="dark"] body.cotd {
   /* Theme tokens, dark */
   --cotd-surface: #0E0E10;
   --cotd-surface-raised: #1C1C1E;
@@ -127,7 +128,7 @@ body[data-page="colors-of-the-day"] {
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) body[data-page="colors-of-the-day"] {
+  :root:not([data-theme]) body.cotd {
     --cotd-surface: #0E0E10;
     --cotd-surface-raised: #1C1C1E;
     --cotd-ink: #FFFFFF;
@@ -142,31 +143,31 @@ body[data-page="colors-of-the-day"] {
 
 /* ---------- Type ---------- */
 
-body[data-page="colors-of-the-day"] h1,
-body[data-page="colors-of-the-day"] h2,
-body[data-page="colors-of-the-day"] h3 {
+body.cotd h1,
+body.cotd h2,
+body.cotd h3 {
   font-weight: 800;
 }
 
-body[data-page="colors-of-the-day"] h1 {
+body.cotd h1 {
   letter-spacing: -0.045em;
 }
 
-body[data-page="colors-of-the-day"] .product-hero h1 {
+body.cotd .product-hero h1 {
   max-width: 13ch;
   font-size: clamp(2.75rem, 5.6vw, 4.6rem);
 }
 
-body[data-page="colors-of-the-day"] h2 {
+body.cotd h2 {
   letter-spacing: -0.04em;
 }
 
-body[data-page="colors-of-the-day"] h3 {
+body.cotd h3 {
   letter-spacing: -0.02em;
 }
 
 /* The design system's "label" style: small uppercase, muted, never coloured. */
-body[data-page="colors-of-the-day"] .eyebrow,
+body.cotd .eyebrow,
 .cotd-step-number {
   color: var(--cotd-ink-muted);
   font-size: 0.8125rem;
@@ -176,11 +177,11 @@ body[data-page="colors-of-the-day"] .eyebrow,
   text-transform: uppercase;
 }
 
-body[data-page="colors-of-the-day"] .product-name {
+body.cotd .product-name {
   font-weight: 800;
 }
 
-body[data-page="colors-of-the-day"] .app-icon {
+body.cotd .app-icon {
   border-radius: 22.37%;
   box-shadow: var(--cotd-shadow-icon);
 }
@@ -611,11 +612,11 @@ body[data-page="colors-of-the-day"] .app-icon {
   gap: clamp(40px, 8vw, 96px);
 }
 
-body[data-page="colors-of-the-day"] .cotd-share .eyebrow {
+body.cotd .cotd-share .eyebrow {
   color: var(--cotd-share-muted);
 }
 
-body[data-page="colors-of-the-day"] .cotd-share h2 {
+body.cotd .cotd-share h2 {
   max-width: 14ch;
   color: var(--cotd-share-ink);
 }
@@ -635,8 +636,100 @@ body[data-page="colors-of-the-day"] .cotd-share h2 {
 
 /* ---------- Benefits ---------- */
 
-body[data-page="colors-of-the-day"] .benefit h3 {
+body.cotd .benefit h3 {
   font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+}
+
+/* ---------- Legal pages (privacy policy) ---------- */
+
+.cotd-legal {
+  max-width: 760px;
+  padding: clamp(56px, 8vw, 96px) 0 clamp(72px, 10vw, 120px);
+}
+
+.cotd-legal h1 {
+  max-width: none;
+  margin-bottom: 18px;
+  font-size: clamp(2.25rem, 5vw, 3.4rem);
+}
+
+.cotd-legal-meta {
+  margin-bottom: 32px;
+  color: var(--cotd-ink-muted);
+  font-size: 0.95rem;
+}
+
+.cotd-legal-summary {
+  margin: 0 0 48px;
+  border: 1px solid var(--cotd-hairline);
+  border-radius: var(--cotd-radius-lg);
+  background: var(--cotd-surface-raised);
+  padding: var(--cotd-space-4) var(--cotd-space-5);
+}
+
+.cotd-legal-summary p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.cotd-legal h2 {
+  margin: 44px 0 12px;
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  letter-spacing: -0.02em;
+}
+
+.cotd-legal p,
+.cotd-legal li {
+  color: var(--cotd-ink-muted);
+  line-height: 1.7;
+}
+
+.cotd-legal p strong,
+.cotd-legal li strong {
+  color: var(--cotd-ink);
+}
+
+.cotd-legal ul {
+  margin: 0 0 16px;
+  padding-left: 1.25rem;
+}
+
+.cotd-legal li + li {
+  margin-top: 6px;
+}
+
+.cotd-legal a {
+  color: var(--cotd-ink);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.cotd-language-switch {
+  display: flex;
+  gap: 4px;
+}
+
+.cotd-language-switch a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0 12px;
+  color: var(--cotd-ink-muted);
+  font-size: 0.925rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cotd-language-switch a:hover {
+  color: var(--cotd-ink);
+}
+
+.cotd-language-switch a[aria-current="page"] {
+  background: var(--cotd-surface-raised);
+  box-shadow: inset 0 0 0 1px var(--cotd-hairline);
+  color: var(--cotd-ink);
 }
 
 /* ---------- Responsive ---------- */
