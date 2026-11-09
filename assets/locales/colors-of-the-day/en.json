@@ -27,5 +27,10 @@
   "benefit_3_text": "Once a day, about two minutes. No ads, nothing interrupting your game, and no red when you miss.",
   "home_platform": "iPhone · Coming soon",
   "home_description": "A daily colour memory game. See five colours, then recreate them from memory.",
-  "privacy_link": "Privacy policy"
+  "privacy_link": "Privacy policy",
+  "facts_eyebrow": "Colors of the Day facts",
+  "facts_title": "A daily colour memory game for iPhone.",
+  "facts_text": "Colors of the Day is a daily puzzle game for iPhone, made by Flux76. Every day, all players get the same five colours. Each colour is shown for 5, 4, 3, 2 and 1 seconds in turn, after which the player recreates it from memory with a colour picker. Each round scores 0 to 100 points, for a maximum of 500 a day, and a game takes about two minutes. The daily puzzle and sharing are free, and there are no ads. The app is in development; a TestFlight beta is coming soon.",
+  "facts_text_beta": "Colors of the Day is a daily puzzle game for iPhone, made by Flux76. Every day, all players get the same five colours. Each colour is shown for 5, 4, 3, 2 and 1 seconds in turn, after which the player recreates it from memory with a colour picker. Each round scores 0 to 100 points, for a maximum of 500 a day, and a game takes about two minutes. The daily puzzle and sharing are free, and there are no ads. The app is in development and available as a beta on TestFlight.",
+  "benefits_label": "Colors of the Day principles"
 }

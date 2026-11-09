@@ -27,5 +27,10 @@
   "benefit_3_text": "Eén keer per dag, ongeveer twee minuten. Geen advertenties, geen onderbrekingen tijdens het spel en geen rood als je ernaast zit.",
   "home_platform": "iPhone · Binnenkort",
   "home_description": "Een dagelijks kleurgeheugenspel. Bekijk vijf kleuren en maak ze uit je geheugen na.",
-  "privacy_link": "Privacybeleid"
+  "privacy_link": "Privacybeleid",
+  "facts_eyebrow": "Colors of the Day in het kort",
+  "facts_title": "Een dagelijks kleurgeheugenspel voor iPhone.",
+  "facts_text": "Colors of the Day is een dagelijkse puzzelgame voor iPhone, gemaakt door Flux76. Elke dag krijgen alle spelers dezelfde vijf kleuren. Elke kleur is om de beurt 5, 4, 3, 2 en 1 seconde te zien, waarna de speler hem met een kleurkiezer uit het geheugen namaakt. Elke ronde levert 0 tot 100 punten op, maximaal 500 per dag, en een spel duurt ongeveer twee minuten. De dagpuzzel en het delen zijn gratis, en er zijn geen advertenties. De app is in ontwikkeling; een bèta op TestFlight komt binnenkort.",
+  "facts_text_beta": "Colors of the Day is een dagelijkse puzzelgame voor iPhone, gemaakt door Flux76. Elke dag krijgen alle spelers dezelfde vijf kleuren. Elke kleur is om de beurt 5, 4, 3, 2 en 1 seconde te zien, waarna de speler hem met een kleurkiezer uit het geheugen namaakt. Elke ronde levert 0 tot 100 punten op, maximaal 500 per dag, en een spel duurt ongeveer twee minuten. De dagpuzzel en het delen zijn gratis, en er zijn geen advertenties. De app is in ontwikkeling en als bèta beschikbaar op TestFlight.",
+  "benefits_label": "Uitgangspunten van Colors of the Day"
 }

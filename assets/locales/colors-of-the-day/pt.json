@@ -27,5 +27,10 @@
   "benefit_3_text": "Uma vez por dia, cerca de dois minutos. Sem anúncios, sem interrupções durante o jogo e sem vermelho quando falhas.",
   "home_platform": "iPhone · Brevemente",
   "home_description": "Um jogo diário de memória de cores. Vê cinco cores e recria-as de memória.",
-  "privacy_link": "Política de privacidade"
+  "privacy_link": "Política de privacidade",
+  "facts_eyebrow": "Colors of the Day em resumo",
+  "facts_title": "Um jogo diário de memória de cores para iPhone.",
+  "facts_text": "Colors of the Day é um puzzle diário para iPhone, criado pela Flux76. Todos os dias, todos os jogadores recebem as mesmas cinco cores. Cada cor é mostrada à vez durante 5, 4, 3, 2 e 1 segundo, e depois o jogador recria-a de memória com um seletor de cores. Cada ronda vale de 0 a 100 pontos, até 500 por dia, e um jogo dura cerca de dois minutos. O puzzle diário e a partilha são gratuitos, e não há anúncios. A app está em desenvolvimento; uma beta no TestFlight chega em breve.",
+  "facts_text_beta": "Colors of the Day é um puzzle diário para iPhone, criado pela Flux76. Todos os dias, todos os jogadores recebem as mesmas cinco cores. Cada cor é mostrada à vez durante 5, 4, 3, 2 e 1 segundo, e depois o jogador recria-a de memória com um seletor de cores. Cada ronda vale de 0 a 100 pontos, até 500 por dia, e um jogo dura cerca de dois minutos. O puzzle diário e a partilha são gratuitos, e não há anúncios. A app está em desenvolvimento e disponível em beta no TestFlight.",
+  "benefits_label": "Princípios de Colors of the Day"
 }

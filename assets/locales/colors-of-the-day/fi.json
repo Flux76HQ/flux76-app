@@ -27,5 +27,10 @@
   "benefit_3_text": "Kerran päivässä, noin kaksi minuuttia. Ei mainoksia, ei keskeytyksiä pelin aikana eikä punaista, kun menee ohi.",
   "home_platform": "iPhone · Tulossa pian",
   "home_description": "Päivittäinen värimuistipeli. Katso viisi väriä ja luo ne uudelleen muistin varassa.",
-  "privacy_link": "Tietosuojakäytäntö"
+  "privacy_link": "Tietosuojakäytäntö",
+  "facts_eyebrow": "Colors of the Day lyhyesti",
+  "facts_title": "Päivittäinen värimuistipeli iPhonelle.",
+  "facts_text": "Colors of the Day on Flux76:n tekemä päivittäinen pulmapeli iPhonelle. Joka päivä kaikki pelaajat saavat samat viisi väriä. Jokainen väri näytetään vuorollaan 5, 4, 3, 2 ja 1 sekunnin ajan, minkä jälkeen pelaaja luo sen uudelleen muistin varassa värinvalitsimella. Jokaisesta kierroksesta saa 0–100 pistettä, enintään 500 päivässä, ja peli kestää noin kaksi minuuttia. Päivän pulma ja jakaminen ovat ilmaisia, eikä sovelluksessa ole mainoksia. Sovellus on kehitteillä; beta TestFlightissa on tulossa pian.",
+  "facts_text_beta": "Colors of the Day on Flux76:n tekemä päivittäinen pulmapeli iPhonelle. Joka päivä kaikki pelaajat saavat samat viisi väriä. Jokainen väri näytetään vuorollaan 5, 4, 3, 2 ja 1 sekunnin ajan, minkä jälkeen pelaaja luo sen uudelleen muistin varassa värinvalitsimella. Jokaisesta kierroksesta saa 0–100 pistettä, enintään 500 päivässä, ja peli kestää noin kaksi minuuttia. Päivän pulma ja jakaminen ovat ilmaisia, eikä sovelluksessa ole mainoksia. Sovellus on kehitteillä, ja sen beta on saatavilla TestFlightissa.",
+  "benefits_label": "Colors of the Dayn periaatteet"
 }

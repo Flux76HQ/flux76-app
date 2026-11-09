@@ -27,5 +27,10 @@
   "benefit_3_text": "Günde bir kez, yaklaşık iki dakika. Reklam yok, oyun sırasında kesinti yok, ıskaladığınızda kırmızı yok.",
   "home_platform": "iPhone · Çok yakında",
   "home_description": "Günlük bir renk hafızası oyunu. Beş rengi görün, ardından hafızanızdan yeniden oluşturun.",
-  "privacy_link": "Gizlilik politikası"
+  "privacy_link": "Gizlilik politikası",
+  "facts_eyebrow": "Colors of the Day hakkında",
+  "facts_title": "iPhone için günlük bir renk hafızası oyunu.",
+  "facts_text": "Colors of the Day, Flux76 tarafından geliştirilen, iPhone için günlük bir bulmaca oyunudur. Her gün tüm oyuncular aynı beş rengi alır. Her renk sırayla 5, 4, 3, 2 ve 1 saniye gösterilir; ardından oyuncu rengi bir renk seçiciyle hafızasından yeniden oluşturur. Her tur 0 ile 100 arasında puan kazandırır, günde en fazla 500 puan; bir oyun yaklaşık iki dakika sürer. Günlük bulmaca ve paylaşım ücretsizdir, reklam yoktur. Uygulama geliştirme aşamasındadır; TestFlight betası yakında geliyor.",
+  "facts_text_beta": "Colors of the Day, Flux76 tarafından geliştirilen, iPhone için günlük bir bulmaca oyunudur. Her gün tüm oyuncular aynı beş rengi alır. Her renk sırayla 5, 4, 3, 2 ve 1 saniye gösterilir; ardından oyuncu rengi bir renk seçiciyle hafızasından yeniden oluşturur. Her tur 0 ile 100 arasında puan kazandırır, günde en fazla 500 puan; bir oyun yaklaşık iki dakika sürer. Günlük bulmaca ve paylaşım ücretsizdir, reklam yoktur. Uygulama geliştirme aşamasındadır ve TestFlight’ta beta olarak kullanılabilir.",
+  "benefits_label": "Colors of the Day ilkeleri"
 }

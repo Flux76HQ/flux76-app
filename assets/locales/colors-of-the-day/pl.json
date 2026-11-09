@@ -27,5 +27,10 @@
   "benefit_3_text": "Raz dziennie, około dwóch minut. Bez reklam, bez przerw w trakcie gry i bez czerwieni, gdy chybisz.",
   "home_platform": "iPhone · Wkrótce",
   "home_description": "Codzienna gra pamięciowa z kolorami. Zobacz pięć kolorów i odtwórz je z pamięci.",
-  "privacy_link": "Polityka prywatności"
+  "privacy_link": "Polityka prywatności",
+  "facts_eyebrow": "Colors of the Day w skrócie",
+  "facts_title": "Codzienna gra pamięciowa z kolorami na iPhone’a.",
+  "facts_text": "Colors of the Day to codzienna łamigłówka na iPhone’a stworzona przez Flux76. Każdego dnia wszyscy gracze dostają te same pięć kolorów. Każdy kolor jest pokazywany kolejno przez 5, 4, 3, 2 i 1 sekundę, a następnie gracz odtwarza go z pamięci za pomocą próbnika kolorów. Każda runda daje od 0 do 100 punktów, maksymalnie 500 dziennie, a jedna gra trwa około dwóch minut. Codzienna zagadka i udostępnianie są bezpłatne, a reklam nie ma. Aplikacja jest w fazie rozwoju; beta w TestFlight pojawi się wkrótce.",
+  "facts_text_beta": "Colors of the Day to codzienna łamigłówka na iPhone’a stworzona przez Flux76. Każdego dnia wszyscy gracze dostają te same pięć kolorów. Każdy kolor jest pokazywany kolejno przez 5, 4, 3, 2 i 1 sekundę, a następnie gracz odtwarza go z pamięci za pomocą próbnika kolorów. Każda runda daje od 0 do 100 punktów, maksymalnie 500 dziennie, a jedna gra trwa około dwóch minut. Codzienna zagadka i udostępnianie są bezpłatne, a reklam nie ma. Aplikacja jest w fazie rozwoju i jest dostępna jako beta w TestFlight.",
+  "benefits_label": "Zasady Colors of the Day"
 }

@@ -100,4 +100,6 @@ element `<p class="cotd-beta-status">…</p>` door:
 ```
 
 De tekst `beta_join` is al vertaald in alle 20 talen en de stijl `.cotd-beta-link` staat klaar.
-Werk daarna ook de status in `llms.txt` en de laatste zin van het feitenblok bij.
+Zet daarna in het feitenblok `data-i18n="facts_text"` om naar `data-i18n="facts_text_beta"` (ook
+vertaald in alle 20 talen, met "beschikbaar als bèta op TestFlight") en pas de Engelse tekst in de
+HTML daarop aan. Werk ten slotte de status in `llms.txt` bij.
