@@ -82,12 +82,21 @@ Het privacybeleid staat op twee vaste adressen, zoals App Store Connect ze per t
 
 GitHub Pages stuurt beide adressen zonder slash door naar de map met slash. De pagina's zijn
 statisch en per taal geschreven (geen vertaling via JavaScript); `site.js` laat taal en
-taalvoorkeur op deze pagina's met rust. De inhoud volgt wat de app nu doet (zie de README van
-`Flux76HQ/ios_color-of-the-day`): geen netwerk, account, analytics, advertenties of in-app
-aankopen, spelgeschiedenis alleen in `UserDefaults` op het toestel, foto's alleen toevoegen bij
-"Save Image", en feedback via mail naar `support@flux76.com`. **Verandert de app hierin (een
-onlinefunctie, Pro-aankoop, landenranglijst), werk dan eerst dit beleid bij**, in beide talen,
-met een nieuwe datum, en pas het App Privacy-label in App Store Connect aan.
+taalvoorkeur op deze pagina's met rust.
+
+De tekst komt uit `docs/privacy-policy.md` op de `beta`-branch van
+`Flux76HQ/ios_color-of-the-day` (Nederlands en Engels, laatst bijgewerkt 10 november 2026). De vier invulplekken zijn ingevuld:
+publicatiedatum 10 november 2026, bedrijfsgegevens "Flux76, Nederland" (geen adres of
+KvK-nummer), Supabase-regio Ierland, en `support@flux76.com` (het feedbackadres in de app).
+
+Getoetst aan de code op `beta`: de app stuurt na een gespeelde dag alleen dagnummer, dagtotaal en
+een willekeurige installatiecode (UUID in `UserDefaults`, nieuw na herinstallatie) naar de
+Supabase-functie `submit_score`; die slaat geen IP-adres op. Game Center krijgt dagtotaal en
+beste reeks. Uitdaging-links staan in de app nog uit (`challengeLinkBase = nil`).
+
+**Verandert de app hierin (andere gegevens, een andere server of regio, accounts, Pro-aankoop),
+werk dan eerst dit beleid bij**, in beide talen, met een nieuwe datum, en pas het App
+Privacy-label in App Store Connect aan.
 
 ### TestFlight
 
