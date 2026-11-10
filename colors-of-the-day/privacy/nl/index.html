@@ -68,12 +68,13 @@
       <ul>
         <li>Je hebt geen account nodig en wij weten niet wie je bent.</li>
         <li>De app bevat geen advertenties en volgt je niet over andere apps of websites.</li>
-        <li>Bijna alles blijft op je telefoon. Alleen je dagscore wordt verstuurd, zonder naam, om je met andere spelers te vergelijken.</li>
+        <li>Bijna alles blijft op je telefoon en, als iCloud-synchronisatie aan staat, in je eigen iCloud. Alleen je dagscore wordt verstuurd, zonder naam, om je met andere spelers te vergelijken.</li>
       </ul>
     </div>
 
     <h2>Wat op je telefoon blijft</h2>
-    <p>Je gespeelde dagen, scores, reeks, instellingen en de tijd van je dagelijkse herinnering worden alleen op je eigen toestel bewaard. De widget leest dezelfde gegevens op je toestel. Als je de app verwijdert, zijn deze gegevens weg.</p>
+    <p>Je gespeelde dagen, scores, reeks, instellingen en de tijd van je dagelijkse herinnering worden op je eigen toestel bewaard. De widget leest dezelfde gegevens op je toestel. Als je de app verwijdert, zijn deze gegevens van je toestel weg.</p>
+    <p><strong>iCloud.</strong> Staat iCloud-synchronisatie aan (dat is de standaard; je zet het uit op het infoscherm van de app), dan worden je gespeelde dagen en scores ook in je eigen iCloud bewaard. Zo komen ze terug na een herinstallatie en staan ze ook op je andere iPhone. Dat loopt via Apple, onder je eigen Apple-account; wij kunnen er niet bij. Je instellingen en de tijd van je herinnering blijven op je toestel. Zet je de synchronisatie uit, dan blijft wat al in iCloud staat daar staan, maar wordt er niets meer bijgewerkt.</p>
     <p>De dagelijkse herinnering is een melding die je telefoon zelf inplant. Er gaat daarvoor niets naar een server.</p>
 
     <h2>Wat de app verstuurt</h2>
@@ -83,7 +84,7 @@
       <li>het nummer van de dag;</li>
       <li>een willekeurige code die de app bij het eerste gebruik zelf heeft aangemaakt.</li>
     </ul>
-    <p>Die code is geen naam, e-mailadres, telefoonnummer of toestelnummer. Hij is nergens anders aan gekoppeld en na een herinstallatie krijg je een nieuwe.</p>
+    <p>Die code is geen naam, e-mailadres, telefoonnummer of toestelnummer, en hij is nergens anders aan gekoppeld. De app bewaart hem in de sleutelhanger (Keychain) van je iPhone. Die blijft bestaan als je de app verwijdert, zodat je na een herinstallatie niet als nieuwe speler meetelt. De code gaat niet via iCloud naar je andere toestellen; met een versleutelde reservekopie gaat hij wel mee naar een nieuwe iPhone.</p>
     <p><strong>Waarvoor.</strong> Alleen om te laten zien hoe je score zich verhoudt tot die van andere spelers (“beter dan 83% van de spelers”) en hoeveel mensen vandaag hebben gespeeld. De code zorgt ervoor dat elke speler per dag één keer meetelt.</p>
     <p><strong>Grondslag.</strong> Ons gerechtvaardigd belang om deze vergelijking in het spel te tonen, met gegevens die niet tot een persoon te herleiden zijn.</p>
     <p><strong>Waar.</strong> De scores staan in een database bij Supabase, in de regio Ierland. Supabase verwerkt deze gegevens in onze opdracht. Zoals bij elk internetverzoek ziet de server daarbij technisch je IP-adres; wij slaan dat niet bij je score op.</p>
