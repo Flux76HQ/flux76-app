@@ -642,7 +642,7 @@ body.cotd .benefit h3 {
 }
 
 .cotd-legal-summary {
-  margin: 0 0 48px;
+  margin: 28px 0 8px;
   border: 1px solid var(--cotd-hairline);
   border-radius: var(--cotd-radius-lg);
   background: var(--cotd-surface-raised);
@@ -653,6 +653,19 @@ body.cotd .benefit h3 {
   margin: 0;
   font-size: 1.05rem;
   line-height: 1.65;
+}
+
+.cotd-legal .cotd-legal-summary h2 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+}
+
+.cotd-legal-summary ul {
+  margin-bottom: 0;
+}
+
+.cotd-legal-summary li {
+  color: var(--cotd-ink);
 }
 
 .cotd-legal h2 {
