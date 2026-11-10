@@ -90,8 +90,10 @@ publicatiedatum 10 november 2026, bedrijfsgegevens "Flux76, Nederland" (geen adr
 KvK-nummer), Supabase-regio Ierland, en `support@flux76.com` (het feedbackadres in de app).
 
 Getoetst aan de code op `beta`: de app stuurt na een gespeelde dag alleen dagnummer, dagtotaal en
-een willekeurige installatiecode (UUID in `UserDefaults`, nieuw na herinstallatie) naar de
-Supabase-functie `submit_score`; die slaat geen IP-adres op. Game Center krijgt dagtotaal en
+een willekeurige installatiecode (UUID in de Keychain, zodat een herinstallatie niet als nieuwe
+speler telt) naar de Supabase-functie `submit_score`; die slaat geen IP-adres op. Met
+iCloud-synchronisatie aan (standaard, uit te zetten op het infoscherm) staat de speelgeschiedenis
+ook in de eigen iCloud van de speler; Flux76 kan daar niet bij. Game Center krijgt dagtotaal en
 beste reeks. Uitdaging-links staan in de app nog uit (`challengeLinkBase = nil`).
 
 **Verandert de app hierin (andere gegevens, een andere server of regio, accounts, Pro-aankoop),

@@ -67,12 +67,13 @@
       <ul>
         <li>You do not need an account and we do not know who you are.</li>
         <li>The app has no ads and does not track you across other apps or websites.</li>
-        <li>Almost everything stays on your phone. Only your daily score is sent, without a name, to compare you with other players.</li>
+        <li>Almost everything stays on your phone and, if iCloud sync is on, in your own iCloud. Only your daily score is sent, without a name, to compare you with other players.</li>
       </ul>
     </div>
 
     <h2>What stays on your phone</h2>
-    <p>Your played days, scores, streak, settings and the time of your daily reminder are stored only on your own device. The widget reads the same data on your device. If you delete the app, this data is gone.</p>
+    <p>Your played days, scores, streak, settings and the time of your daily reminder are stored on your own device. The widget reads the same data on your device. If you delete the app, this data is gone from your device.</p>
+    <p><strong>iCloud.</strong> If iCloud sync is on (the default; you can turn it off on the app’s info screen), your played days and scores are also kept in your own iCloud. That way they come back after a reinstall and appear on your other iPhone too. This goes through Apple, under your own Apple Account; we cannot access it. Your settings and reminder time stay on your device. If you turn sync off, what is already in iCloud stays there, but nothing is updated any more.</p>
     <p>The daily reminder is a notification that your phone schedules itself. Nothing is sent to a server for it.</p>
 
     <h2>What the app sends</h2>
@@ -82,7 +83,7 @@
       <li>the number of the day;</li>
       <li>a random code that the app created itself when it was first used.</li>
     </ul>
-    <p>That code is not a name, email address, phone number or device number. It is not linked to anything else, and a reinstall gives you a new one.</p>
+    <p>That code is not a name, email address, phone number or device number, and it is not linked to anything else. The app keeps it in your iPhone’s keychain, which stays when you delete the app, so a reinstall does not count you as a new player. The code is not shared with your other devices through iCloud; an encrypted backup does take it along to a new iPhone.</p>
     <p><strong>Purpose.</strong> Only to show how your score compares with other players (“better than 83% of players”) and how many people played today. The code makes sure each player counts once per day.</p>
     <p><strong>Legal basis.</strong> Our legitimate interest in showing this comparison in the game, using data that cannot be traced to a person.</p>
     <p><strong>Where.</strong> Scores are stored in a database at Supabase, in the region Ireland. Supabase processes this data on our behalf. As with any internet request, the server technically sees your IP address; we do not store it with your score.</p>
