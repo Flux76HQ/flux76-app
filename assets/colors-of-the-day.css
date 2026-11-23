@@ -222,41 +222,6 @@ body.cotd .app-icon {
   }
 }
 
-.cotd-beta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--cotd-space-3);
-  margin-top: 36px;
-}
-
-/* The TestFlight invite: a neutral control button, never coloured. */
-.cotd-beta-link {
-  display: inline-flex;
-  min-height: 52px;
-  align-items: center;
-  gap: 10px;
-  border-radius: 999px;
-  background: var(--cotd-control);
-  padding: 0 24px;
-  color: var(--cotd-on-control);
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: opacity 160ms ease, transform 160ms ease;
-}
-
-.cotd-beta-link:hover {
-  opacity: 0.88;
-  transform: translateY(-1px);
-}
-
-.cotd-beta-link svg {
-  width: 18px;
-  height: 18px;
-  flex: none;
-}
-
 /* ---------- Steps ---------- */
 
 .cotd-steps {
