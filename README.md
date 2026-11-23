@@ -2,7 +2,7 @@
 
 Statische promotiesite voor de apps van [Flux76](https://flux76.com). De homepage geeft een
 rustig overzicht van alle apps. Iedere app krijgt een eigen promotiepagina: **DiscVault** voor
-iPhone en iPad, en **Colors of the Day** voor iPhone (bèta op TestFlight).
+iPhone en iPad, en **Colors of the Day** voor iPhone.
 
 - **Techniek:** statische HTML met gedeelde CSS en JavaScript, zonder build-stap.
 - **Talen:** dezelfde 20 locales als discvault.eu, met de bestaande DiscVault-vertalingen
@@ -100,14 +100,16 @@ beste reeks. Uitdaging-links staan in de app nog uit (`challengeLinkBase = nil`)
 werk dan eerst dit beleid bij**, in beide talen, met een nieuwe datum, en pas het App
 Privacy-label in App Store Connect aan.
 
-### TestFlight
+### App Store
 
-De openbare bèta staat op TestFlight: <https://testflight.apple.com/join/hN7d5dkp>. De pagina linkt ernaar met een neutrale knop
-(`.cotd-beta-link`, tekst `beta_join`), en het feitenblok gebruikt `facts_text_beta`. Op de
-homepage staat bij de app "iPhone · Beta on TestFlight" (`home_platform`). Alle drie zijn vertaald
-in de 20 talen.
+Colors of the Day staat sinds 22 november 2026 gratis in de App Store: <https://apps.apple.com/app/colors-of-the-day/id6832338459>
+(Apple ID `6832338459`, versie 1.0, iOS 17 of nieuwer, alleen iPhone, Engels en Nederlands).
 
-Verandert de uitnodigingslink, pas dan de `href` van `.cotd-beta-link` in
-`colors-of-the-day/index.html` en de link in `llms.txt` aan. Komt de app in de App Store, vervang
-de knop dan door de App Store-badge (zoals op de DiscVault-pagina) en werk `home_platform`,
-`facts_text_beta` en `llms.txt` bij.
+- De pagina toont de officiële App Store-badge in de taal van de bezoeker, net als DiscVault
+  (`.store-link`/`.store-badge`; `site.js` wisselt de badge per taal). Het label voor
+  schermlezers is `store_aria`, vertaald in de 20 talen.
+- `<meta name="apple-itunes-app">` toont in Safari op iPhone de Smart App Banner.
+- Het feitenblok (`facts_text`) zegt "gratis in de App Store, voor iPhone met iOS 17 of nieuwer";
+  de homepagekaart toont "iPhone · Gratis" (`home_platform`).
+- De structured data (`MobileApplication`) heeft versie, minimale iOS-versie, prijs en de
+  App Store-link. Werk `softwareVersion`, `dateModified` en `llms.txt` bij bij een nieuwe versie.

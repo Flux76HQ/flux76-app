@@ -3,8 +3,6 @@
   "eyebrow": "Et daglig fargehukommelsesspill",
   "hero_title": "Fem farger. Fra hukommelsen.",
   "hero_lede": "Hver dag får alle de samme fem fargene. Du ser hver farge et kort øyeblikk og gjenskaper den så fra hukommelsen. Jo nærmere du kommer, jo mer ser sirkelen ut som én farge.",
-  "beta_soon": "Snart på TestFlight",
-  "beta_join": "Bli med i betaen på TestFlight",
   "steps_eyebrow": "Slik går en dag",
   "steps_title": "Fem runder. Omtrent to minutter.",
   "step_1_title": "Se",
@@ -25,12 +23,12 @@
   "benefit_2_text": "Knapper og bakgrunner holdes grå, så ingenting ved siden av fargen endrer hvordan du ser den.",
   "benefit_3_title": "Rolig av design",
   "benefit_3_text": "Én gang om dagen, omtrent to minutter. Ingen reklame, ingenting som avbryter spillet, og ingen rødfarge når du bommer.",
-  "home_platform": "iPhone · Beta på TestFlight",
+  "home_platform": "iPhone · Gratis",
   "home_description": "Et daglig fargehukommelsesspill. Se fem farger og gjenskap dem fra hukommelsen.",
   "privacy_link": "Personvernerklæring",
   "facts_eyebrow": "Fakta om Colors of the Day",
   "facts_title": "Et daglig fargehukommelsesspill for iPhone.",
-  "facts_text": "Colors of the Day er et daglig hjernetrimspill for iPhone, laget av Flux76. Hver dag får alle spillerne de samme fem fargene. Hver farge vises etter tur i 5, 4, 3, 2 og 1 sekund, og deretter gjenskaper spilleren den fra hukommelsen med en fargevelger. Hver runde gir 0 til 100 poeng, maks 500 om dagen, og et spill tar omtrent to minutter. Den daglige oppgaven og deling er gratis, og det er ingen reklame. Appen er under utvikling; en beta på TestFlight kommer snart.",
-  "facts_text_beta": "Colors of the Day er et daglig hjernetrimspill for iPhone, laget av Flux76. Hver dag får alle spillerne de samme fem fargene. Hver farge vises etter tur i 5, 4, 3, 2 og 1 sekund, og deretter gjenskaper spilleren den fra hukommelsen med en fargevelger. Hver runde gir 0 til 100 poeng, maks 500 om dagen, og et spill tar omtrent to minutter. Den daglige oppgaven og deling er gratis, og det er ingen reklame. Appen er under utvikling og tilgjengelig som beta på TestFlight.",
-  "benefits_label": "Prinsippene bak Colors of the Day"
+  "facts_text": "Colors of the Day er et daglig hjernetrimspill for iPhone, laget av Flux76. Hver dag får alle spillerne de samme fem fargene. Hver farge vises etter tur i 5, 4, 3, 2 og 1 sekund, og deretter gjenskaper spilleren den fra hukommelsen med en fargevelger. Hver runde gir 0 til 100 poeng, maks 500 om dagen, og et spill tar omtrent to minutter. Den daglige oppgaven og deling er gratis, og det er ingen reklame. Appen er gratis i App Store for iPhone med iOS 17 eller nyere.",
+  "benefits_label": "Prinsippene bak Colors of the Day",
+  "store_aria": "Last ned Colors of the Day i App Store"
 }

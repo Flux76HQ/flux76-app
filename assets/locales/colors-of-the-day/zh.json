@@ -3,8 +3,6 @@
   "eyebrow": "每日色彩记忆游戏",
   "hero_title": "五种颜色，全凭记忆。",
   "hero_lede": "每天，所有人都会拿到同样的五种颜色。每种颜色只出现片刻，随后你要凭记忆把它还原出来。越接近，圆就越像同一种颜色。",
-  "beta_soon": "即将登陆 TestFlight",
-  "beta_join": "在 TestFlight 上加入测试版",
   "steps_eyebrow": "一天的玩法",
   "steps_title": "五轮，约两分钟。",
   "step_1_title": "看",
@@ -25,12 +23,12 @@
   "benefit_2_text": "按钮和背景始终是灰色，颜色旁边没有任何东西会影响你的观感。",
   "benefit_3_title": "安静的设计",
   "benefit_3_text": "每天一次，约两分钟。没有广告，游戏中不受打扰，失误时也不会出现红色提示。",
-  "home_platform": "iPhone · TestFlight 测试版",
+  "home_platform": "iPhone · 免费",
   "home_description": "每日色彩记忆游戏。看五种颜色，再凭记忆把它们还原出来。",
   "privacy_link": "隐私政策",
   "facts_eyebrow": "Colors of the Day 简介",
   "facts_title": "一款适用于 iPhone 的每日色彩记忆游戏。",
-  "facts_text": "Colors of the Day 是 Flux76 为 iPhone 打造的每日益智游戏。每天，所有玩家都会拿到同样的五种颜色。每种颜色依次显示 5 秒、4 秒、3 秒、2 秒和 1 秒，随后玩家用取色器凭记忆把它还原出来。每轮 0 到 100 分，每天最高 500 分，一局大约两分钟。每日谜题和分享都是免费的，没有广告。应用正在开发中，TestFlight 测试版即将推出。",
-  "facts_text_beta": "Colors of the Day 是 Flux76 为 iPhone 打造的每日益智游戏。每天，所有玩家都会拿到同样的五种颜色。每种颜色依次显示 5 秒、4 秒、3 秒、2 秒和 1 秒，随后玩家用取色器凭记忆把它还原出来。每轮 0 到 100 分，每天最高 500 分，一局大约两分钟。每日谜题和分享都是免费的，没有广告。应用正在开发中，已在 TestFlight 上提供测试版。",
-  "benefits_label": "Colors of the Day 的理念"
+  "facts_text": "Colors of the Day 是 Flux76 为 iPhone 打造的每日益智游戏。每天，所有玩家都会拿到同样的五种颜色。每种颜色依次显示 5 秒、4 秒、3 秒、2 秒和 1 秒，随后玩家用取色器凭记忆把它还原出来。每轮 0 到 100 分，每天最高 500 分，一局大约两分钟。每日谜题和分享都是免费的，没有广告。应用可在 App Store 免费下载，适用于 iOS 17 或更高版本的 iPhone。",
+  "benefits_label": "Colors of the Day 的理念",
+  "store_aria": "在 App Store 下载 Colors of the Day"
 }
