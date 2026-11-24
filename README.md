@@ -91,13 +91,19 @@ statisch en per taal geschreven (geen vertaling via JavaScript); `site.js` laat 
 taalvoorkeur op deze pagina's met rust.
 
 De tekst komt uit `docs/privacy-policy.md` op de `beta`-branch van
-`Flux76HQ/ios_color-of-the-day` (Nederlands en Engels, laatst bijgewerkt 10 november 2026). De vier invulplekken zijn ingevuld:
-publicatiedatum 10 november 2026, bedrijfsgegevens "Flux76, Nederland" (geen adres of
+`Flux76HQ/ios_color-of-the-day` (Nederlands en Engels, laatst bijgewerkt 24 november 2026, voor
+versie 1.2 met de wereldranglijsten en het verborgen Pro). De vier invulplekken zijn ingevuld:
+publicatiedatum 24 november 2026, bedrijfsgegevens "Flux76, Nederland" (geen adres of
 KvK-nummer), Supabase-regio Ierland, en `support@flux76.com` (het feedbackadres in de app).
+De pagina's worden met een script uit dat bestand gemaakt; pas dus eerst `docs/privacy-policy.md`
+in de app-repo aan en neem de tekst daarna letterlijk over.
 
 Getoetst aan de code op `beta`: de app stuurt na een gespeelde dag alleen dagnummer, dagtotaal en
 een willekeurige installatiecode (UUID in de Keychain, zodat een herinstallatie niet als nieuwe
-speler telt) naar de Supabase-functie `submit_score`; die slaat geen IP-adres op. Met
+speler telt) naar de Supabase-functie `submit_score`; die slaat geen IP-adres op. Voor de
+wereldranglijsten stuurt de app dagnummer, dagscore, weekpunten, beste reeks en beste dag zonder
+code; voor de verdeling van de dag alleen een reeks dagnummers. Rijen met de code worden na
+400 dagen verwijderd. Met
 iCloud-synchronisatie aan (standaard, uit te zetten op het infoscherm) staat de speelgeschiedenis
 ook in de eigen iCloud van de speler; Flux76 kan daar niet bij. Game Center krijgt dagtotaal en
 beste reeks. Uitdaging-links staan in de app nog uit (`challengeLinkBase = nil`).
