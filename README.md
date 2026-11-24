@@ -7,7 +7,13 @@ iPhone en iPad, en **Colors of the Day** voor iPhone.
 - **Techniek:** statische HTML met gedeelde CSS en JavaScript, zonder build-stap.
 - **Talen:** dezelfde 20 locales als discvault.eu, met de bestaande DiscVault-vertalingen
   onder `assets/locales/` en de Colors of the Day-teksten onder
-  `assets/locales/colors-of-the-day/`.
+  `assets/locales/colors-of-the-day/`. De Colors of the Day-pagina heeft daarnaast de talen van
+  de App Store-vermelding die de site nog niet had: `hr`, `pt-BR`, `ro`, `ru`, `sk` en `sl`
+  (26 in totaal; `pt` is Europees-Portugees). Homepage en DiscVault houden hun 20.
+- **Taal kiezen via de link:** `?lang=<code>` opent een pagina in die taal, bijvoorbeeld
+  `https://flux76.app/colors-of-the-day/?lang=hr` als marketing-URL in de Kroatische
+  App Store-vermelding. Zo'n link wordt niet onthouden; alleen een taal die de bezoeker zelf in
+  het menu kiest wel, en een pagina zonder die taal overschrijft die keuze niet.
 - **Weergave:** Light / Dark / System, lokaal onthouden in de browser.
 - **Hosting:** GitHub Pages — zie [`DEPLOY.md`](DEPLOY.md).
 
