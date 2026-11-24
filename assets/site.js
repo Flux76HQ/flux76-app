@@ -3,6 +3,15 @@ const LANGUAGES = [
   "ja", "ko", "nl", "no", "pl", "pt", "sv", "tr", "uk", "zh"
 ];
 
+// Languages a page offers beyond the site-wide ones. Colors of the Day also
+// has the languages of its App Store listing ("pt" stays European Portuguese).
+const EXTRA_LANGUAGES = {
+  "colors-of-the-day": ["hr", "pt-BR", "ro", "ru", "sk", "sl"]
+};
+
+// Browser languages that map onto a site language.
+const LANGUAGE_ALIASES = { nb: "no", nn: "no", "pt-pt": "pt" };
+
 const SITE_COPY = {
   en: {
     language: "Languages", appearance: "Appearance", system: "System", light: "Light", dark: "Dark",
@@ -118,6 +127,42 @@ const SITE_COPY = {
     homeLede: "Спокійний дім для застосунків Flux76. Зрозумілі, дружні до приватності та створені надовго.",
     coming: "Згодом з'являться інші застосунки."
   },
+  hr: {
+    language: "Jezici", appearance: "Izgled", system: "Sustav", light: "Svijetlo", dark: "Tamno",
+    homeTitle: "Aplikacije izrađene s pažnjom.",
+    homeLede: "Mirno mjesto za aplikacije tvrtke Flux76. Jasne, prijateljske prema privatnosti i napravljene da traju.",
+    coming: "Uskoro stiže još aplikacija."
+  },
+  "pt-BR": {
+    language: "Idiomas", appearance: "Aparência", system: "Sistema", light: "Claro", dark: "Escuro",
+    homeTitle: "Apps feitos com cuidado.",
+    homeLede: "Um espaço tranquilo para os apps da Flux76. Claros, focados em privacidade e feitos para durar.",
+    coming: "Mais apps em breve."
+  },
+  ro: {
+    language: "Limbi", appearance: "Aspect", system: "Sistem", light: "Luminos", dark: "Întunecat",
+    homeTitle: "Aplicații făcute cu grijă.",
+    homeLede: "Un loc liniștit pentru aplicațiile Flux76. Clare, prietenoase cu viața privată și făcute să dureze.",
+    coming: "Vor urma și alte aplicații."
+  },
+  ru: {
+    language: "Языки", appearance: "Оформление", system: "Системное", light: "Светлое", dark: "Тёмное",
+    homeTitle: "Приложения, сделанные с заботой.",
+    homeLede: "Спокойное место для приложений Flux76. Понятные, бережные к конфиденциальности и созданные надолго.",
+    coming: "Скоро появятся и другие приложения."
+  },
+  sk: {
+    language: "Jazyky", appearance: "Vzhľad", system: "Systém", light: "Svetlý", dark: "Tmavý",
+    homeTitle: "Aplikácie vytvorené so starostlivosťou.",
+    homeLede: "Pokojné miesto pre aplikácie Flux76. Prehľadné, šetrné k súkromiu a vytvorené tak, aby vydržali.",
+    coming: "Ďalšie aplikácie budú nasledovať."
+  },
+  sl: {
+    language: "Jeziki", appearance: "Videz", system: "Sistem", light: "Svetlo", dark: "Temno",
+    homeTitle: "Aplikacije, narejene s skrbnostjo.",
+    homeLede: "Miren dom za aplikacije Flux76. Jasne, prijazne do zasebnosti in narejene, da trajajo.",
+    coming: "Sledile bodo še druge aplikacije."
+  },
   zh: {
     language: "语言", appearance: "外观", system: "跟随系统", light: "浅色", dark: "深色",
     homeTitle: "用心打造的应用。",
@@ -154,14 +199,36 @@ async function loadLocales(language) {
   return Object.fromEntries(entries);
 }
 
-function preferredLanguage() {
-  const saved = localStorage.getItem("flux76-language");
-  if (LANGUAGES.includes(saved)) {
-    return saved;
-  }
+// The languages this page offers.
+const pageLanguages = LANGUAGES.concat(EXTRA_LANGUAGES[pageName] || []);
 
-  const browserLanguage = navigator.language.slice(0, 2).toLowerCase();
-  return LANGUAGES.includes(browserLanguage) ? browserLanguage : "en";
+// The page's own spelling of a language code, or undefined when it does not offer it.
+function supportedLanguage(code) {
+  if (!code) {
+    return undefined;
+  }
+  const lower = code.toLowerCase();
+  const exact = pageLanguages.find((language) => language.toLowerCase() === lower);
+  if (exact) {
+    return exact;
+  }
+  const alias = LANGUAGE_ALIASES[lower] || LANGUAGE_ALIASES[lower.slice(0, 2)];
+  if (alias && pageLanguages.includes(alias)) {
+    return alias;
+  }
+  const base = lower.slice(0, 2);
+  return pageLanguages.includes(base) ? base : undefined;
+}
+
+// A link can choose the language with ?lang=hr (for example from an App Store
+// listing). The choice is not remembered; the visitor's own choice is.
+function preferredLanguage() {
+  const fromLink = supportedLanguage(new URLSearchParams(window.location.search).get("lang"));
+  const saved = supportedLanguage(localStorage.getItem("flux76-language"));
+  const browser = (navigator.languages || [navigator.language])
+    .map(supportedLanguage)
+    .find(Boolean);
+  return fromLink || saved || browser || "en";
 }
 
 function pageCopy(language, locales) {
@@ -201,7 +268,7 @@ function pageCopy(language, locales) {
 }
 
 async function applyLanguage(language) {
-  const activeLanguage = LANGUAGES.includes(language) ? language : "en";
+  const activeLanguage = supportedLanguage(language) || "en";
   const request = ++languageRequest;
   const locales = await loadLocales(activeLanguage);
 
@@ -261,7 +328,6 @@ async function applyLanguage(language) {
       : "/colors-of-the-day/privacy/";
   });
 
-  localStorage.setItem("flux76-language", activeLanguage);
 }
 
 function reportLanguageError(error) {
@@ -285,6 +351,9 @@ function applyTheme(theme) {
 
 document.querySelectorAll(".language-select").forEach((select) => {
   select.addEventListener("change", (event) => {
+    // Only a language the visitor picks is remembered, so a page that does
+    // not offer it (falling back to another language) never overwrites it.
+    localStorage.setItem("flux76-language", event.target.value);
     applyLanguage(event.target.value).catch(reportLanguageError);
   });
 });
